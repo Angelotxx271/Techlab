@@ -1,0 +1,103 @@
+{
+  "id": "01-fundamentals",
+  "pathId": "azure",
+  "title": "Subscriptions, Resource Groups & Storage Accounts",
+  "conceptExplanation": "Azure hierarchy: **tenant** → **subscriptions** → **resource groups** → resources. A **Storage Account** holds blobs, files, queues, and tables. The **Azure CLI** uses `az` with `--resource-group` (`-g`) flags. RBAC roles assign who can manage what.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "az-01-mc",
+      "type": "multiple_choice",
+      "question": "Which Azure resource is a logical container that holds related resources for lifecycle and permissions?",
+      "options": [
+        "Resource group",
+        "Availability zone",
+        "Front Door profile",
+        "ExpressRoute circuit"
+      ],
+      "correctAnswer": "Resource group",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "az-01-tf",
+      "type": "true_false",
+      "question": "Azure Blob Storage stores unstructured object data in containers analogous to S3 buckets.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "az-01-fib",
+      "type": "fill_in_blank",
+      "question": "The cross-platform command-line tool for Azure is the _____ CLI (command name `az`).",
+      "correctAnswer": "Azure",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "az-01-cc",
+      "type": "code_completion",
+      "question": "Complete: list resource groups",
+      "codeTemplate": "az group _____",
+      "correctAnswer": "list",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary purpose of a Resource Group?",
+      "back": "To act as a logical container for grouping related resources for unified management and deletion."
+    },
+    {
+      "front": "Which CLI flag is the shorthand for specifying a resource group?",
+      "back": "The -g flag."
+    },
+    {
+      "front": "True or False: A resource can belong to two different resource groups at the same time.",
+      "back": "False; a resource can only belong to exactly one resource group."
+    },
+    {
+      "front": "What are the four types of data services provided by a Storage Account?",
+      "back": "Blobs, Files, Queues, and Tables."
+    },
+    {
+      "front": "At which level is the billing boundary typically managed in Azure?",
+      "back": "The Subscription level."
+    },
+    {
+      "front": "What does RBAC stand for and what does it control?",
+      "back": "Role-Based Access Control; it manages who has permissions to perform actions on specific resources."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Filing Cabinet Office",
+      "analogy": "The Tenant is the entire office building, Subscriptions are individual filing cabinets, and Resource Groups are the labeled drawers inside.",
+      "explanation": "Just as drawers organize specific files, Resource Groups organize specific tools, while the Subscription handles the 'rent' or billing for the cabinet."
+    },
+    {
+      "title": "A Restaurant Kitchen",
+      "analogy": "The Storage Account is like a walk-in pantry with different containers for liquids (Blobs), dry goods (Files), and order slips (Queues).",
+      "explanation": "It provides a single location to hold various types of 'ingredients' or data that the applications need to function."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Tenant",
+      "definition": "A dedicated instance of Azure Active Directory that represents an entire organization."
+    },
+    {
+      "term": "Subscription",
+      "definition": "An agreement with Microsoft to use Azure services, serving as a billing and scale boundary."
+    },
+    {
+      "term": "Resource Group",
+      "definition": "A logical folder where Azure resources like web apps and databases are deployed and managed as a group."
+    },
+    {
+      "term": "Storage Account",
+      "definition": "A secure account that provides a unique namespace for your Azure Storage data accessible from anywhere."
+    },
+    {
+      "term": "RBAC",
+      "definition": "A security system that regulates access to resources based on the roles assigned to individual users."
+    }
+  ]
+}

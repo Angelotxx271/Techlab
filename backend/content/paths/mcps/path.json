@@ -1,0 +1,12 @@
+{
+  "id": "mcps",
+  "title": "Model Context Protocol (MCP)",
+  "description": "Connect models to your data and tools with MCP — resources, tools, prompts, and transports",
+  "category": "ai-ml",
+  "estimatedDuration": "2.5 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-mcp-basics", "title": "MCP Architecture & Primitives", "order": 1 },
+    { "id": "02-servers-transports", "title": "Building MCP Servers & Transports", "order": 2 }
+  ]
+}

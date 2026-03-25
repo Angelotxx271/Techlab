@@ -1,0 +1,103 @@
+{
+  "id": "01-commits-branches",
+  "pathId": "git",
+  "title": "Commits, Branches & History",
+  "conceptExplanation": "**Commits** snapshot the repo with messages and parent pointers. **Branches** are movable pointers (usually `main` + feature branches). `git log` / `git show` inspect history; `HEAD` references your current checkout.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "git-01-mc",
+      "type": "multiple_choice",
+      "question": "Which command creates a new branch and switches to it in one step (modern Git)?",
+      "options": [
+        "git switch -c feature/login",
+        "git branch --only feature/login",
+        "git new branch feature/login",
+        "git checkout --branch feature/login"
+      ],
+      "correctAnswer": "git switch -c feature/login",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "git-01-tf",
+      "type": "true_false",
+      "question": "Each commit points to at least one parent commit (except the root).",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "git-01-fib",
+      "type": "fill_in_blank",
+      "question": "After editing files, you stage changes with git _____ before committing.",
+      "correctAnswer": "add",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "git-01-cc",
+      "type": "code_completion",
+      "question": "Complete the command (replace YOUR_MESSAGE):",
+      "codeTemplate": "git commit -m \"YOUR_MESSAGE\"",
+      "correctAnswer": "git commit -m \"docs: readme\"",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What does a Git commit represent?",
+      "back": "A permanent snapshot of the project's files at a specific point in time."
+    },
+    {
+      "front": "How do you view a chronological list of previous commits?",
+      "back": "Use the command `git log`."
+    },
+    {
+      "front": "True or False: A Git branch is a heavy folder containing duplicate files.",
+      "back": "False; a branch is simply a lightweight, movable pointer to a specific commit."
+    },
+    {
+      "front": "What is the purpose of the 'HEAD' pointer?",
+      "back": "It indicates the current commit or branch your working directory is currently viewing."
+    },
+    {
+      "front": "Which command displays the specific file changes made in a single commit?",
+      "back": "The `git show` command."
+    },
+    {
+      "front": "What happens to the branch pointer when you make a new commit?",
+      "back": "The branch pointer automatically moves forward to the new commit."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "Video Game Save Points",
+      "analogy": "Creating a commit is like hitting 'Save' in a video game before a big boss fight.",
+      "explanation": "If your new code causes a 'game over,' you can instantly reload the previous snapshot and start over from that exact state."
+    },
+    {
+      "title": "The Tree of Parallel Universes",
+      "analogy": "The main trunk is your stable reality, but branching creates a parallel universe where you can try something risky.",
+      "explanation": "Branches allow you to work on new features in isolation without affecting the stable 'main' version of your project."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Commit",
+      "definition": "A snapshot of your changes saved to the version history with a unique ID."
+    },
+    {
+      "term": "Branch",
+      "definition": "An independent line of development that allows you to work on features without affecting the main code."
+    },
+    {
+      "term": "HEAD",
+      "definition": "A reference to the specific commit or branch currently checked out in your workspace."
+    },
+    {
+      "term": "SHA-1 Hash",
+      "definition": "A unique 40-character string that acts as a fingerprint for every individual commit."
+    },
+    {
+      "term": "Repository",
+      "definition": "The data structure or 'container' that stores your project's files and its entire version history."
+    }
+  ]
+}

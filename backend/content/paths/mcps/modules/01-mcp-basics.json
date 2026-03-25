@@ -1,0 +1,103 @@
+{
+  "id": "01-mcp-basics",
+  "pathId": "mcps",
+  "title": "MCP Architecture & Primitives",
+  "conceptExplanation": "**Model Context Protocol (MCP)** standardizes how AI hosts discover **resources** (readable data), **tools** (executable actions), and **prompts** (templates). The host runs an MCP client; your server exposes capabilities over stdio, SSE, or other transports.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "mcp-01-mc",
+      "type": "multiple_choice",
+      "question": "In MCP, what does a client typically call to invoke server-defined operations with structured arguments?",
+      "options": [
+        "Tools",
+        "Tokens",
+        "Threads",
+        "Checkpoints"
+      ],
+      "correctAnswer": "Tools",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "mcp-01-tf",
+      "type": "true_false",
+      "question": "MCP separates the AI host application from domain-specific integrations via a protocol.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "mcp-01-fib",
+      "type": "fill_in_blank",
+      "question": "MCP servers can expose read-only contextual items to the model as _____.",
+      "correctAnswer": "resources",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "mcp-01-cc",
+      "type": "code_completion",
+      "question": "Replace the blank with the three-letter acronym for Model Context Protocol:",
+      "codeTemplate": "_____ standardizes tools, resources, and prompts between hosts and integrations.",
+      "correctAnswer": "MCP standardizes tools, resources, and prompts between hosts and integrations.",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary goal of the Model Context Protocol (MCP)?",
+      "back": "To provide a standardized way for AI models to access data and execute functions regardless of the platform."
+    },
+    {
+      "front": "Which MCP primitive represents 'readable data' like documentation or logs?",
+      "back": "Resources."
+    },
+    {
+      "front": "What is the difference between a Tool and a Prompt in MCP?",
+      "back": "Tools are executable functions that change things; Prompts are reusable templates for LLM interactions."
+    },
+    {
+      "front": "Which transport method is typically used for local MCP server connections?",
+      "back": "stdio (Standard Input/Output)."
+    },
+    {
+      "front": "True or False: The MCP Client is usually the LLM itself.",
+      "back": "False; the Client is the interface (like an IDE or app) that connects the LLM to the MCP Server."
+    },
+    {
+      "front": "How does an MCP host know what a server is capable of?",
+      "back": "Through a discovery process where the server lists its available resources, tools, and prompts."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Universal Remote and Smart Home",
+      "analogy": "MCP is like a universal remote protocol that allows one remote (the AI Host) to talk to any brand of light bulb (Server) using standard commands.",
+      "explanation": "The remote doesn't need to know how the bulb works internally, just that it follows the standard 'on/off' tool protocol."
+    },
+    {
+      "title": "The Professional Kitchen",
+      "analogy": "The Chef (AI Host) uses a Waiter (Client) to access the Pantry (Resources), use the Oven (Tools), and follow Recipes (Prompts).",
+      "explanation": "The Waiter standardizes how the Chef interacts with the various capabilities of the kitchen to produce a result."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Host",
+      "definition": "The main application (like an IDE or chat interface) that integrates with an AI model and initiates MCP connections."
+    },
+    {
+      "term": "Resource",
+      "definition": "A standardized data object that provides the AI with read-only information, such as file contents or API responses."
+    },
+    {
+      "term": "Tool",
+      "definition": "An executable capability exposed by a server that allows the AI to perform actions in the external world."
+    },
+    {
+      "term": "Transport",
+      "definition": "The communication mechanism, such as stdio or SSE, used to pass messages between the MCP client and server."
+    },
+    {
+      "term": "Prompt Template",
+      "definition": "A pre-defined instructional structure provided by the server to help the AI perform specific tasks consistently."
+    }
+  ]
+}

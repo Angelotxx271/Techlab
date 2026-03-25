@@ -1,0 +1,146 @@
+{
+  "id": "02-images-and-compose",
+  "pathId": "docker",
+  "title": "Docker Images, Dockerfiles & Compose",
+  "conceptExplanation": "A Dockerfile defines the steps to build a custom Docker image. Each instruction creates a layer, and Docker caches layers for fast rebuilds.\n\n```dockerfile\nFROM python:3.11-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]\n```\n\nBuild and run:\n```bash\ndocker build -t myapp .\ndocker run -p 8000:8000 myapp\n```\n\nDocker Compose lets you define and run multi-container applications with a single YAML file:\n\n```yaml\nservices:\n  web:\n    build: .\n    ports:\n      - '8000:8000'\n  db:\n    image: postgres:15\n    environment:\n      POSTGRES_PASSWORD: secret\n```\n\nRun with `docker compose up`. Compose handles networking between services automatically — the `web` service can reach the database at hostname `db`.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "ex-01",
+      "type": "multiple_choice",
+      "question": "Which Dockerfile instruction sets the base image for a build?",
+      "options": [
+        "FROM",
+        "BASE",
+        "IMAGE",
+        "USE"
+      ],
+      "correctAnswer": "FROM",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-02",
+      "type": "fill_in_blank",
+      "question": "The command `docker build -t myapp .` builds an image and tags it with the name _____.",
+      "correctAnswer": "myapp",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-03",
+      "type": "true_false",
+      "question": "In Docker Compose, services defined in the same compose file can communicate using their service names as hostnames.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-04",
+      "type": "code_completion",
+      "question": "Complete the Dockerfile instruction that copies all files from the current directory into the container's /app directory:",
+      "codeTemplate": "WORKDIR /app\n___",
+      "correctAnswer": "COPY . .",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-challenge-01",
+      "type": "code_challenge",
+      "question": "Write a function that parses a simplified Docker Compose YAML-like structure (given as a dictionary) and returns the dependency order of services.",
+      "correctAnswer": "",
+      "difficulty": "advanced",
+      "problemStatement": "Given a dictionary representing Docker Compose services where each service may have a 'depends_on' list of other service names, return a valid startup order (topological sort). If a service has no dependencies, it can start first. All dependencies of a service must appear before it in the output list. You may assume there are no circular dependencies.",
+      "inputOutputSpec": "Input: a dictionary where keys are service names (strings) and values are lists of dependency service names (strings). Output: a list of service names in valid startup order.",
+      "starterTemplate": {
+        "python": "def startup_order(services: dict[str, list[str]]) -> list[str]:\n    pass",
+        "javascript": "function startupOrder(services) {\n    \n}"
+      },
+      "testCases": [
+        {
+          "id": "tc-01",
+          "input": "{\"web\": [\"db\"], \"db\": []}",
+          "expectedOutput": "[\"db\", \"web\"]",
+          "isHidden": false
+        },
+        {
+          "id": "tc-02",
+          "input": "{\"app\": [\"db\", \"redis\"], \"db\": [], \"redis\": []}",
+          "expectedOutput": "[\"db\", \"redis\", \"app\"]",
+          "isHidden": false
+        },
+        {
+          "id": "tc-03",
+          "input": "{\"frontend\": [\"api\"], \"api\": [\"db\"], \"db\": []}",
+          "expectedOutput": "[\"db\", \"api\", \"frontend\"]",
+          "isHidden": false
+        },
+        {
+          "id": "tc-04",
+          "input": "{\"solo\": []}",
+          "expectedOutput": "[\"solo\"]",
+          "isHidden": true
+        }
+      ],
+      "supportedLanguages": [
+        "python",
+        "javascript"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What does the 'FROM' instruction do in a Dockerfile?",
+      "back": "It specifies the starting base image, such as an operating system or a language runtime."
+    },
+    {
+      "front": "What is the difference between 'RUN' and 'CMD'?",
+      "back": "'RUN' executes commands to build the image, while 'CMD' defines the default command when the container starts."
+    },
+    {
+      "front": "Why should you copy dependency files (like requirements.txt) before source code?",
+      "back": "To take advantage of layer caching, which skips reinstalling dependencies if they haven't changed."
+    },
+    {
+      "front": "What does the '-p' flag in 'docker run' represent?",
+      "back": "It performs port mapping, connecting a host port to a specific container port."
+    },
+    {
+      "front": "What is a 'layer' in the context of Docker images?",
+      "back": "A read-only file system difference resulting from an individual instruction in a Dockerfile."
+    },
+    {
+      "front": "What is the primary purpose of Docker Compose?",
+      "back": "To define and manage multi-container applications using a single configuration file."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The IKEA Furniture Set",
+      "analogy": "A Dockerfile is the instruction manual, the Image is the flat-packed box from the store, and the Container is the assembled desk in your office.",
+      "explanation": "The manual (Dockerfile) defines the build, the box (Image) is the portable package, and the desk (Container) is the actual living instance."
+    },
+    {
+      "title": "The Orchestral Conductor",
+      "analogy": "While individual containers are like solo musicians, Docker Compose is the conductor who ensures everyone plays together in harmony.",
+      "explanation": "Compose manages the timing and communication between different services (containers) so they function as one unified application."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Base Image",
+      "definition": "An existing image used as the starting point for building a new custom image."
+    },
+    {
+      "term": "Layer Caching",
+      "definition": "A mechanism where Docker reuses results from previous builds to save time and resources."
+    },
+    {
+      "term": "Context",
+      "definition": "The set of files and directories accessible to the Docker engine during the image build process."
+    },
+    {
+      "term": "YAML",
+      "definition": "The human-friendly data format used by Docker Compose to define services, networks, and volumes."
+    },
+    {
+      "term": "Port Mapping",
+      "definition": "The process of exposing a container's internal network port to the outside world through the host machine."
+    }
+  ]
+}

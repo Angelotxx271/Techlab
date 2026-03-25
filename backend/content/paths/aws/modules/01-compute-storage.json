@@ -1,0 +1,103 @@
+{
+  "id": "01-compute-storage",
+  "pathId": "aws",
+  "title": "EC2, S3 & IAM Fundamentals",
+  "conceptExplanation": "**EC2** provides resizable virtual machines in AWS. **S3** is object storage with buckets and keys (not file paths). **IAM** controls identities and policies — users, roles, and federated access. The **AWS CLI** uses named profiles (`aws configure`) and region defaults (`AWS_REGION`).\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "aws-01-mc",
+      "type": "multiple_choice",
+      "question": "Which AWS service provides durable object storage with bucket and key semantics?",
+      "options": [
+        "Amazon S3",
+        "Amazon EBS",
+        "Amazon EFS",
+        "AWS Lambda"
+      ],
+      "correctAnswer": "Amazon S3",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aws-01-tf",
+      "type": "true_false",
+      "question": "IAM policies attached to an IAM role can grant an EC2 instance access to other AWS services without embedding long-lived keys on the instance.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "aws-01-fib",
+      "type": "fill_in_blank",
+      "question": "Amazon _____ is AWS's service for virtual servers you manage at the OS level.",
+      "correctAnswer": "EC2",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aws-01-cc",
+      "type": "code_completion",
+      "question": "Complete the AWS CLI command to list S3 buckets (service short name):",
+      "codeTemplate": "aws _____ ls",
+      "correctAnswer": "s3",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary difference between an IAM User and an IAM Role?",
+      "back": "A User is a permanent identity for a person/app, while a Role is temporary and meant to be assumed by services or federated users."
+    },
+    {
+      "front": "True or False: S3 uses a traditional file system hierarchy with folders.",
+      "back": "False; S3 is object storage using a flat structure where 'folders' are actually just part of the object's key name."
+    },
+    {
+      "front": "What does the 'AMI' represent in the context of EC2?",
+      "back": "An Amazon Machine Image is a pre-configured template containing the OS and software needed to launch an instance."
+    },
+    {
+      "front": "Which AWS CLI command is used to set up credentials and default regions locally?",
+      "back": "The 'aws configure' command."
+    },
+    {
+      "front": "How do you provide different credentials for multiple AWS accounts in the CLI?",
+      "back": "By using Named Profiles (e.g., --profile project-alpha) to switch between credential sets."
+    },
+    {
+      "front": "What is the 'Principle of Least Privilege' in IAM?",
+      "back": "The security practice of granting only the minimum permissions necessary to perform a specific task."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The High-Rise Hotel",
+      "analogy": "IAM is like a hotel's keycard system: the front desk (IAM) issues a card (Policy) that lets a guest (User) access their room (S3) but not the penthouse or the kitchen.",
+      "explanation": "IAM controls who you are and exactly which AWS resources you have permission to touch."
+    },
+    {
+      "title": "The Rental Car Fleet",
+      "analogy": "EC2 is like a car rental agency where you choose a vehicle type (Instance Type) based on your trip (Workload), use it as long as needed, and return it when finished.",
+      "explanation": "EC2 provides on-demand virtual servers where you select the CPU and RAM capacity to match your specific application needs."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Instance",
+      "definition": "A virtual computing environment (server) running in AWS's data centers."
+    },
+    {
+      "term": "Bucket",
+      "definition": "A public or private container used to store objects in Amazon S3."
+    },
+    {
+      "term": "Policy",
+      "definition": "A JSON document that defines permissions and is attached to IAM identities."
+    },
+    {
+      "term": "Region",
+      "definition": "A physical geographical location in the world where AWS clusters data centers."
+    },
+    {
+      "term": "Object",
+      "definition": "The fundamental entity stored in S3, consisting of data, a key, and metadata."
+    }
+  ]
+}

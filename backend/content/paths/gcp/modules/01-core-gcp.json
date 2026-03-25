@@ -1,0 +1,103 @@
+{
+  "id": "01-core-gcp",
+  "pathId": "gcp",
+  "title": "Projects, IAM & Cloud Storage",
+  "conceptExplanation": "GCP organizes resources under **projects** (with project IDs and numbers). **IAM** binds roles to principals at project, folder, or org level. **Cloud Storage** provides buckets (like S3) with uniform bucket-level access options. Use `gcloud` CLI with `--project` for targeting.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "gcp-01-mc",
+      "type": "multiple_choice",
+      "question": "Which GCP CLI command prefix is used for most resource operations?",
+      "options": [
+        "gcloud",
+        "gc",
+        "google-cloud",
+        "gcpcli"
+      ],
+      "correctAnswer": "gcloud",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "gcp-01-tf",
+      "type": "true_false",
+      "question": "Cloud Storage buckets in GCP are regional or multi-regional resources for object data.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "gcp-01-fib",
+      "type": "fill_in_blank",
+      "question": "GCP identities (users, groups, service accounts) are granted permissions via IAM _____ bound to resources.",
+      "correctAnswer": "roles",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "gcp-01-cc",
+      "type": "code_completion",
+      "question": "Complete: list GCP projects you can access",
+      "codeTemplate": "gcloud _____ list",
+      "correctAnswer": "projects",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the difference between a Project ID and a Project Number?",
+      "back": "A Project ID is a unique, user-defined string, while a Project Number is a permanent, system-generated numerical identifier."
+    },
+    {
+      "front": "How does permission inheritance work in GCP's hierarchy?",
+      "back": "Permissions flow downward; granting a role at the Organization or Folder level automatically applies it to all Projects within them."
+    },
+    {
+      "front": "What is the primary function of IAM 'Uniform bucket-level access'?",
+      "back": "It disables individual object Access Control Lists (ACLs) to ensure access is managed strictly through IAM roles for the entire bucket."
+    },
+    {
+      "front": "What defines a 'Principal' in GCP IAM?",
+      "back": "An identity—such as a user email, service account, or Google Group—that can be assigned a role to access resources."
+    },
+    {
+      "front": "Which CLI flag is used to execute a gcloud command against a specific project?",
+      "back": "The `--project` flag, followed by the Project ID."
+    },
+    {
+      "front": "True or False: Cloud Storage bucket names only need to be unique within your specific project.",
+      "back": "False; bucket names are part of a global namespace and must be unique across all of Google Cloud."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Secure Office Building",
+      "analogy": "A Project is like a physical office building, and IAM is the security desk that checks your badge (Principal) to see which floors (Roles) you are allowed to visit.",
+      "explanation": "Just as a badge grants access to specific rooms, IAM binds roles to identities to control access to resources within the project container."
+    },
+    {
+      "title": "The Global Locker Room",
+      "analogy": "Cloud Storage is like a massive, worldwide locker room where every locker (Bucket) must have a unique name that no one else in the world is already using.",
+      "explanation": "The locker is the bucket, the items inside are objects, and the global naming requirement ensures data can be addressed uniquely across the web."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Project",
+      "definition": "The foundational container for grouping, managing, and billing all Google Cloud resources."
+    },
+    {
+      "term": "IAM (Identity and Access Management)",
+      "definition": "The system that defines who (identity) has what access (role) to which resource."
+    },
+    {
+      "term": "Bucket",
+      "definition": "The basic container in Cloud Storage that holds your data objects."
+    },
+    {
+      "term": "Principal",
+      "definition": "An identity granted access to a resource, such as a user, group, or service account."
+    },
+    {
+      "term": "gcloud CLI",
+      "definition": "The primary command-line tool for managing and automating Google Cloud resources."
+    }
+  ]
+}

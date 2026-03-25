@@ -1,0 +1,102 @@
+{
+  "id": "02-services-config",
+  "pathId": "kubernetes",
+  "title": "Services, ConfigMaps & Namespaces",
+  "conceptExplanation": "A **Service** provides stable DNS and load balancing to pods via label selectors (ClusterIP, NodePort, LoadBalancer). **ConfigMaps** inject configuration; **Secrets** store sensitive data (base64 encoded at rest). **Namespaces** isolate resources within a cluster.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "k8s-02-mc",
+      "type": "multiple_choice",
+      "question": "Which Service type typically exposes an app only inside the cluster on an internal IP?",
+      "options": [
+        "ClusterIP",
+        "LoadBalancer",
+        "ExternalName for public only",
+        "HostNetwork"
+      ],
+      "correctAnswer": "ClusterIP",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "k8s-02-tf",
+      "type": "true_false",
+      "question": "ConfigMaps are suitable for non-sensitive configuration data consumed as env vars or mounted files.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "k8s-02-fib",
+      "type": "fill_in_blank",
+      "question": "To store TLS certs or passwords, Kubernetes provides _____ objects separate from ConfigMaps.",
+      "correctAnswer": "Secret",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-services-config-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Kubernetes module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "Which Service type is only accessible from within the cluster by default?",
+      "back": "ClusterIP, which is the default service type in Kubernetes."
+    },
+    {
+      "front": "True or False: Kubernetes Secrets are automatically encrypted at rest.",
+      "back": "False; they are only Base64 encoded by default and require additional provider-level configuration for encryption."
+    },
+    {
+      "front": "What happens if a Service's label selector does not match any Pod labels?",
+      "back": "The Service will exist but will have no endpoints, meaning any traffic sent to it will fail."
+    },
+    {
+      "front": "How do ConfigMaps help with the 'Build once, run anywhere' philosophy?",
+      "back": "They allow you to keep configuration separate from the container image so the same image works in dev, staging, and prod."
+    },
+    {
+      "front": "What is the main purpose of a Namespace?",
+      "back": "To provide logical isolation and resource scoping for different teams or projects within the same physical cluster."
+    },
+    {
+      "front": "Which Service type exposes the application to external traffic via a cloud provider's load balancer?",
+      "back": "LoadBalancer."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Office Receptionist",
+      "analogy": "Instead of trying to find the specific desk of an employee who might be out to lunch, you call the main office number and the receptionist routes you to whoever is currently available to help.",
+      "explanation": "A Service acts as the receptionist, providing one stable IP/DNS name that routes traffic to a revolving set of healthy Pods."
+    },
+    {
+      "title": "The Apartment Building",
+      "analogy": "A large building is divided into individual apartments. Residents in Apartment A can name their dog 'Buddy' without it bothering the 'Buddy' living in Apartment B.",
+      "explanation": "Namespaces act like apartments, allowing different teams to use the same resource names (like 'web-server') without conflict because they are in separate scopes."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Service",
+      "definition": "An abstraction that defines a logical set of Pods and a policy by which to access them."
+    },
+    {
+      "term": "ConfigMap",
+      "definition": "An API object used to store non-sensitive configuration data in key-value pairs."
+    },
+    {
+      "term": "Secret",
+      "definition": "A resource used to hold sensitive information like passwords, tokens, or keys, intended to reduce the risk of exposure."
+    },
+    {
+      "term": "Namespace",
+      "definition": "A virtual cluster used to partition resources into logically distinct groups for isolation and management."
+    },
+    {
+      "term": "Label Selector",
+      "definition": "A query mechanism used by Services to identify and group specific Pods based on their assigned labels."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "02-modules-workspaces",
+  "pathId": "terraform",
+  "title": "Modules, Variables & Workspaces",
+  "conceptExplanation": "**Modules** package reusable Terraform (e.g., `module \"vpc\"`). **Input variables** (`variable` blocks) parameterize. **Outputs** expose values. **Workspaces** (CLI) or separate state keys isolate environments like dev/prod.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "tf-02-mc",
+      "type": "multiple_choice",
+      "question": "What is the purpose of a Terraform module?",
+      "options": [
+        "Reuse and compose infrastructure as a package",
+        "Encrypt provider credentials only",
+        "Replace the need for state",
+        "Run Kubernetes pods"
+      ],
+      "correctAnswer": "Reuse and compose infrastructure as a package",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "tf-02-tf",
+      "type": "true_false",
+      "question": "Output blocks can expose values to parent modules or to CLI after apply.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "tf-02-fib",
+      "type": "fill_in_blank",
+      "question": "Values passed into modules are often declared as Terraform _____ blocks with types and defaults.",
+      "correctAnswer": "variable",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-modules-workspaces-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Terraform module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary purpose of a Terraform module?",
+      "back": "To group related resources together into a reusable, portable container."
+    },
+    {
+      "front": "What keyword is used to pass parameters into a module to make it flexible?",
+      "back": "The 'variable' block defines input parameters for customization."
+    },
+    {
+      "front": "How do you share information from a child module back to the calling configuration?",
+      "back": "By defining 'output' blocks within the child module."
+    },
+    {
+      "front": "Which CLI command is used to switch between different environment states?",
+      "back": "'terraform workspace select <name>' switches the active environment context."
+    },
+    {
+      "front": "What is the 'root module' in a Terraform project?",
+      "back": "The directory containing the .tf files where you run the terraform apply command."
+    },
+    {
+      "front": "True or False: Workspaces are the best way to isolate dev/prod when using different AWS accounts.",
+      "back": "False; separate state files or backends are preferred for high-security isolation between accounts."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "IKEA Furniture Kits",
+      "analogy": "A module is like an IKEA instruction manual for a bookshelf. You can buy the same kit (module) multiple times, but choose different colors (variables) for each room (workspace).",
+      "explanation": "The module provides the logic, variables provide the customization, and workspaces keep each physical bookshelf separate."
+    },
+    {
+      "title": "The Professional Kitchen",
+      "analogy": "Variables are the ingredients listed in a recipe, while the recipe itself is the module. The different shifts (Morning vs. Night) are like workspaces.",
+      "explanation": "The recipe stays the same, but the ingredients change based on the order, and different shifts ensure the same kitchen setup doesn't interfere with previous work."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Module",
+      "definition": "A collection of .tf files in a single directory used to organize and reuse resource configurations."
+    },
+    {
+      "term": "Input Variable",
+      "definition": "A parameter that allows values to be passed into a module without modifying the source code."
+    },
+    {
+      "term": "Output Value",
+      "definition": "A return value from a module that can be displayed on the CLI or used by other modules."
+    },
+    {
+      "term": "Workspace",
+      "definition": "An isolated instance of state within the same configuration directory, used to manage multiple environments."
+    },
+    {
+      "term": "Child Module",
+      "definition": "A module that is called by another module (usually the root module) to perform specific tasks."
+    }
+  ]
+}

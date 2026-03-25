@@ -1,0 +1,102 @@
+{
+  "id": "02-models-orm",
+  "pathId": "django",
+  "title": "Models, Migrations & the Django ORM",
+  "conceptExplanation": "Django **models** are Python classes that map to database tables. After changing models you create **migrations** with `makemigrations` and apply them with `migrate`. The **ORM** lets you query with `Model.objects.filter(...)` instead of raw SQL, while still allowing `.raw()` when needed.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "dj-02-mc",
+      "type": "multiple_choice",
+      "question": "Which command generates migration files after you edit models?",
+      "options": [
+        "python manage.py makemigrations",
+        "python manage.py migrate",
+        "python manage.py syncdb",
+        "django-admin migrate --create"
+      ],
+      "correctAnswer": "python manage.py makemigrations",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "dj-02-tf",
+      "type": "true_false",
+      "question": "Django's ORM requires you to write SQL for every query.",
+      "correctAnswer": "false",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "dj-02-fib",
+      "type": "fill_in_blank",
+      "question": "Model fields are defined inside a subclass of django.db.models._____.",
+      "correctAnswer": "Model",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-models-orm-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Django module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary purpose of a Django Model?",
+      "back": "To define the structure of your database table using Python classes and fields."
+    },
+    {
+      "front": "Which command creates new migration files based on changes detected in models.py?",
+      "back": "python manage.py makemigrations"
+    },
+    {
+      "front": "What command synchronizes the database schema with your migration files?",
+      "back": "python manage.py migrate"
+    },
+    {
+      "front": "Does Model.objects.filter() return a single object or a QuerySet?",
+      "back": "It returns a QuerySet, which acts like a list of objects, even if only one item matches."
+    },
+    {
+      "front": "How do you retrieve a single specific object that you know exists?",
+      "back": "Use Model.objects.get(id=1), but be careful as it raises an error if the item is missing."
+    },
+    {
+      "front": "What does the 'ORM' acronym stand for in the context of Django?",
+      "back": "Object-Relational Mapper; it bridges the gap between Python objects and database tables."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Architect's Blueprint",
+      "analogy": "The Model is a blueprint for a house, while the Migration is the set of instructions sent to the construction crew to update the physical building.",
+      "explanation": "The model defines what the data 'should' look like, and migrations are the versioned steps that transform the actual database to match that design."
+    },
+    {
+      "title": "The Universal Translator",
+      "analogy": "The ORM is like a translator at a global summit who listens to a Python speaker and repeats the message in SQL for the database to understand.",
+      "explanation": "It allows developers to write data queries in familiar Python syntax without needing to master the complex, specific dialects of raw SQL."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Model",
+      "definition": "A Python class that represents a single database table and defines its fields and behaviors."
+    },
+    {
+      "term": "Migration",
+      "definition": "A versioned file that tracks changes to your models and propagates them to the database schema."
+    },
+    {
+      "term": "QuerySet",
+      "definition": "A collection of database records retrieved through the ORM that can be filtered, ordered, or sliced."
+    },
+    {
+      "term": "Field",
+      "definition": "An attribute in a model that corresponds to a specific database column and data type, like CharField or IntegerField."
+    },
+    {
+      "term": "ORM",
+      "definition": "A programming layer that allows you to interact with your database using objects instead of writing raw SQL queries."
+    }
+  ]
+}

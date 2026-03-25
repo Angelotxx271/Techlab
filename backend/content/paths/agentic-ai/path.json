@@ -1,0 +1,12 @@
+{
+  "id": "agentic-ai",
+  "title": "Agentic AI",
+  "description": "Build agents that plan, use tools, and act in loops — patterns beyond single-shot chat completions",
+  "category": "ai-ml",
+  "estimatedDuration": "3 hours",
+  "difficulty": "advanced",
+  "modules": [
+    { "id": "01-agents-tools", "title": "Agents, Tools & Safety Basics", "order": 1 },
+    { "id": "02-planning-memory", "title": "Planning Steps, State & Human-in-the-Loop", "order": 2 }
+  ]
+}

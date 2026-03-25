@@ -1,0 +1,12 @@
+{
+  "id": "aws",
+  "title": "AWS",
+  "description": "Amazon Web Services — EC2, S3, VPC, Lambda, and provider-specific console & CLI patterns",
+  "category": "cloud-platforms",
+  "estimatedDuration": "4 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-compute-storage", "title": "EC2, S3 & IAM Fundamentals", "order": 1 },
+    { "id": "02-networking-serverless", "title": "VPC Basics, Lambda & API Gateway", "order": 2 }
+  ]
+}

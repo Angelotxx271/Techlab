@@ -1,0 +1,146 @@
+{
+  "id": "02-routes-and-models",
+  "pathId": "fastapi",
+  "title": "Routes, Path Parameters & Pydantic Models",
+  "conceptExplanation": "FastAPI uses Python decorators to define HTTP routes. Path parameters are declared directly in the route string and as function arguments with type hints — FastAPI validates them automatically.\n\n```python\n@app.get('/items/{item_id}')\ndef read_item(item_id: int, q: str = None):\n    return {'item_id': item_id, 'q': q}\n```\n\nFor request bodies, you define Pydantic models:\n\n```python\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    in_stock: bool = True\n\n@app.post('/items/')\ndef create_item(item: Item):\n    return item\n```\n\nFastAPI automatically validates incoming JSON against the model, returns 422 errors for invalid data, and generates OpenAPI schema documentation.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "ex-01",
+      "type": "multiple_choice",
+      "question": "What HTTP status code does FastAPI return when request body validation fails?",
+      "options": [
+        "400",
+        "422",
+        "500",
+        "404"
+      ],
+      "correctAnswer": "422",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-02",
+      "type": "fill_in_blank",
+      "question": "In FastAPI, path parameters are declared using _____ in the route decorator string, e.g., '/items/{item_id}'.",
+      "correctAnswer": "curly braces",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-03",
+      "type": "true_false",
+      "question": "A Pydantic model field with a default value is optional in the request body.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-04",
+      "type": "code_completion",
+      "question": "Complete the Pydantic model for a User with a required 'name' (str) and optional 'age' (int, default None):",
+      "codeTemplate": "from pydantic import BaseModel\n\nclass User(BaseModel):\n    name: str\n    age: ___ = None",
+      "correctAnswer": "int | None",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-challenge-01",
+      "type": "code_challenge",
+      "question": "Write a function that parses a list of FastAPI route strings and returns a dictionary mapping each route to its list of path parameter names.",
+      "correctAnswer": "",
+      "difficulty": "advanced",
+      "problemStatement": "Given a list of FastAPI-style route strings (e.g., '/users/{user_id}/posts/{post_id}'), write a function that extracts all path parameter names from each route. Return a dictionary where keys are the route strings and values are lists of parameter names found in curly braces.",
+      "inputOutputSpec": "Input: a list of route strings. Output: a dictionary mapping each route string to a list of its path parameter names (strings without braces), in order of appearance.",
+      "starterTemplate": {
+        "python": "def extract_path_params(routes: list[str]) -> dict[str, list[str]]:\n    pass",
+        "javascript": "function extractPathParams(routes) {\n    \n}"
+      },
+      "testCases": [
+        {
+          "id": "tc-01",
+          "input": "[\"/users/{user_id}\"]",
+          "expectedOutput": "{\"/users/{user_id}\": [\"user_id\"]}",
+          "isHidden": false
+        },
+        {
+          "id": "tc-02",
+          "input": "[\"/users/{user_id}/posts/{post_id}\", \"/health\"]",
+          "expectedOutput": "{\"/users/{user_id}/posts/{post_id}\": [\"user_id\", \"post_id\"], \"/health\": []}",
+          "isHidden": false
+        },
+        {
+          "id": "tc-03",
+          "input": "[]",
+          "expectedOutput": "{}",
+          "isHidden": false
+        },
+        {
+          "id": "tc-04",
+          "input": "[\"/items/{item_id}/reviews/{review_id}/comments/{comment_id}\"]",
+          "expectedOutput": "{\"/items/{item_id}/reviews/{review_id}/comments/{comment_id}\": [\"item_id\", \"review_id\", \"comment_id\"]}",
+          "isHidden": true
+        }
+      ],
+      "supportedLanguages": [
+        "python",
+        "javascript"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "How do you define a variable part of a URL in a FastAPI route?",
+      "back": "Wrap the variable name in curly braces, such as {item_id}, within the route string."
+    },
+    {
+      "front": "What determines the data type validation for a path parameter?",
+      "back": "The Python type hint assigned to the corresponding argument in the function signature."
+    },
+    {
+      "front": "Which Pydantic class must your custom data models inherit from?",
+      "back": "The BaseModel class provided by the pydantic library."
+    },
+    {
+      "front": "What is the default HTTP response if a user sends a string to an integer-hinted path parameter?",
+      "back": "FastAPI returns a 422 Unprocessable Entity error with details about the validation failure."
+    },
+    {
+      "front": "How are query parameters distinguished from path parameters in the function signature?",
+      "back": "Query parameters are arguments not included in the URL path string, often with default values."
+    },
+    {
+      "front": "What does a Pydantic model do when it receives more fields than defined?",
+      "back": "By default, it ignores the extra fields and only processes the attributes defined in the model."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Custom Sandwich Order",
+      "analogy": "A customer fills out a specific checklist for a sandwich: bread type, protein, and if they want cheese.",
+      "explanation": "The Pydantic model is the checklist; it ensures every 'order' (request body) contains exactly the types of data the kitchen expects."
+    },
+    {
+      "title": "The Library Catalog Number",
+      "analogy": "To find a specific book, you go to the 'History' section and provide a specific 'ID' from the spine.",
+      "explanation": "The 'History' section is the route, and the specific 'ID' is the path parameter used to locate one unique resource."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Path Parameter",
+      "definition": "A variable part of a URL path used to identify a specific resource."
+    },
+    {
+      "term": "Pydantic",
+      "definition": "A library for data validation that uses Python type annotations to enforce schemas."
+    },
+    {
+      "term": "BaseModel",
+      "definition": "The foundation class in Pydantic used to define the structure of request bodies."
+    },
+    {
+      "term": "Type Hinting",
+      "definition": "Python syntax that declares the expected data type of a variable or parameter."
+    },
+    {
+      "term": "Decorator",
+      "definition": "The @ symbol syntax used to register a function as a specific API endpoint."
+    }
+  ]
+}

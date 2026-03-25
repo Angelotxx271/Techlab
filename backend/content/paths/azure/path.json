@@ -1,0 +1,12 @@
+{
+  "id": "azure",
+  "title": "Microsoft Azure",
+  "description": "Azure — Resource Groups, App Service, Blob Storage, Functions, and Azure-specific naming",
+  "category": "cloud-platforms",
+  "estimatedDuration": "4 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-fundamentals", "title": "Subscriptions, Resource Groups & Storage Accounts", "order": 1 },
+    { "id": "02-app-service-functions", "title": "App Service & Azure Functions", "order": 2 }
+  ]
+}

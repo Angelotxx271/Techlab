@@ -1,0 +1,12 @@
+{
+  "id": "fastapi",
+  "title": "FastAPI",
+  "description": "Build modern, high-performance APIs with FastAPI — Python's async-first web framework",
+  "category": "web-frameworks",
+  "estimatedDuration": "2 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-intro", "title": "Introduction to FastAPI", "order": 1 },
+    { "id": "02-routes-and-models", "title": "Routes, Path Parameters & Pydantic Models", "order": 2 }
+  ]
+}

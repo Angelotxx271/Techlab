@@ -1,0 +1,103 @@
+{
+  "id": "01-pods-deployments",
+  "pathId": "kubernetes",
+  "title": "Pods, Deployments & ReplicaSets",
+  "conceptExplanation": "A **Pod** is the smallest deployable unit — usually one primary container (+ sidecars). A **ReplicaSet** keeps N matching pod templates running. A **Deployment** manages ReplicaSets and enables rolling updates and rollbacks. Use `kubectl apply -f` or imperative commands for changes.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "k8s-01-mc",
+      "type": "multiple_choice",
+      "question": "Which workload resource is the recommended way to run stateless apps with rolling updates?",
+      "options": [
+        "Deployment",
+        "Pod alone",
+        "ConfigMap",
+        "PersistentVolume only"
+      ],
+      "correctAnswer": "Deployment",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "k8s-01-tf",
+      "type": "true_false",
+      "question": "A Pod can run multiple containers that share network and storage namespaces.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "k8s-01-fib",
+      "type": "fill_in_blank",
+      "question": "The kubectl command to show pods in the current namespace is kubectl get _____.",
+      "correctAnswer": "pods",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "k8s-01-cc",
+      "type": "code_completion",
+      "question": "Complete: describe a deployment named api in default namespace",
+      "codeTemplate": "kubectl describe deployment _____",
+      "correctAnswer": "api",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the smallest deployable unit in Kubernetes?",
+      "back": "A Pod, which typically wraps a single application container."
+    },
+    {
+      "front": "Why should you use a Deployment instead of a ReplicaSet directly?",
+      "back": "Deployments provide high-level features like rolling updates and the ability to roll back changes."
+    },
+    {
+      "front": "What happens if a Pod managed by a ReplicaSet is manually deleted?",
+      "back": "The ReplicaSet notices the count dropped and automatically starts a new Pod to match the desired state."
+    },
+    {
+      "front": "Can a single Pod run multiple containers?",
+      "back": "Yes, it can run a primary container plus 'sidecar' containers that share the same network and storage."
+    },
+    {
+      "front": "Which kubectl command is preferred for applying configuration changes from a YAML file?",
+      "back": "kubectl apply -f <filename>"
+    },
+    {
+      "front": "What is the primary role of a ReplicaSet?",
+      "back": "To maintain a stable set of replica Pods running at any given time."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Fast Food Kitchen",
+      "analogy": "A Pod is a single meal tray (burger and fries). A ReplicaSet is the Shift Lead ensuring 10 trays are always ready on the counter. A Deployment is the Menu Manager who introduces a new burger recipe by replacing trays one by one.",
+      "explanation": "The meal is the work unit (Pod), the lead maintains quantity (ReplicaSet), and the manager handles upgrades and versioning (Deployment)."
+    },
+    {
+      "title": "The Hotel Housekeeping",
+      "analogy": "A Pod is a clean room. A ReplicaSet is the Supervisor ensuring 50 rooms are always vacant and ready. A Deployment is the Interior Designer who upgrades room decor floor-by-floor without closing the whole hotel.",
+      "explanation": "Rooms are the basic unit; supervisors handle availability; designers manage the rollout of new features/states across the fleet."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Pod",
+      "definition": "The basic execution unit in Kubernetes that encapsulates one or more containers."
+    },
+    {
+      "term": "Deployment",
+      "definition": "An object that manages the desired state of Pods and handles rolling updates to new versions."
+    },
+    {
+      "term": "ReplicaSet",
+      "definition": "A controller that ensures a specific number of Pod replicas are running at all times."
+    },
+    {
+      "term": "Sidecar",
+      "definition": "A secondary container in a Pod that provides supporting functionality like logging or proxying."
+    },
+    {
+      "term": "Rolling Update",
+      "definition": "A deployment strategy that replaces old Pods with new ones gradually to prevent downtime."
+    }
+  ]
+}

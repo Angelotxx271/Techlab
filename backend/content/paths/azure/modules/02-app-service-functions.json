@@ -1,0 +1,102 @@
+{
+  "id": "02-app-service-functions",
+  "pathId": "azure",
+  "title": "App Service & Azure Functions",
+  "conceptExplanation": "**Azure App Service** hosts web apps, APIs, and mobile backends with managed scaling. **Azure Functions** provides serverless compute with triggers (HTTP, queues, timers). **Application Insights** integrates for monitoring both.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "az-02-mc",
+      "type": "multiple_choice",
+      "question": "Which Azure service is commonly used for running small event-driven code units with consumption-based pricing?",
+      "options": [
+        "Azure Functions",
+        "Azure Cosmos DB",
+        "Azure DevOps Boards",
+        "Azure Arc only"
+      ],
+      "correctAnswer": "Azure Functions",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "az-02-tf",
+      "type": "true_false",
+      "question": "App Service supports deployment slots for blue/green style releases.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "az-02-fib",
+      "type": "fill_in_blank",
+      "question": "Functions often use a host.json file and a _____ describing bindings and triggers.",
+      "correctAnswer": "function.json",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-app-service-functions-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Azure module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary difference between App Service and Azure Functions execution?",
+      "back": "App Service is for long-running, continuous web hosting; Azure Functions is for short-lived, event-driven code execution."
+    },
+    {
+      "front": "What does 'Serverless' mean in the context of Azure Functions?",
+      "back": "You focus only on the code; Azure manages the infrastructure, scaling, and provisioning automatically."
+    },
+    {
+      "front": "Which service should you use to host a REST API that requires consistent response times and high traffic?",
+      "back": "Azure App Service is generally better for persistent APIs, while Functions are better for background tasks."
+    },
+    {
+      "front": "What is a 'Cold Start' in Azure Functions?",
+      "back": "A delay in execution that occurs when a function is triggered after being idle for a long period."
+    },
+    {
+      "front": "How does Application Insights help with Azure Functions?",
+      "back": "It provides real-time logging, performance monitoring, and error tracking for every execution."
+    },
+    {
+      "front": "True or False: You must manually patch the OS on an Azure App Service instance.",
+      "back": "False; as a PaaS offering, Microsoft handles all OS security updates and patching."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Commercial Kitchen vs. The Vending Machine",
+      "analogy": "App Service is like a leased restaurant kitchen where you pay for the space monthly regardless of orders; Azure Functions is like a vending machine that only consumes electricity and charges when a button is pressed.",
+      "explanation": "App Service provides a persistent environment for complex apps, while Functions execute small pieces of logic only when triggered."
+    },
+    {
+      "title": "The Motion-Sensor Light",
+      "analogy": "Azure Functions are like motion-sensor security lights that stay dark until someone walks past (a trigger), then turn off once the action is done.",
+      "explanation": "This represents the event-driven nature of serverless compute where resources are only active when an event occurs."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "PaaS (Platform as a Service)",
+      "definition": "A cloud model where the provider manages servers and runtime, letting developers focus solely on deploying code."
+    },
+    {
+      "term": "Trigger",
+      "definition": "A specific event, such as an HTTP request or a message queue update, that causes an Azure Function to run."
+    },
+    {
+      "term": "Horizontal Scaling",
+      "definition": "The process of adding more instances of an app or function to handle increased traffic loads."
+    },
+    {
+      "term": "App Service Plan",
+      "definition": "The set of compute resources and pricing tier that defines the performance and cost of an App Service."
+    },
+    {
+      "term": "Telemetry",
+      "definition": "The data collected by Application Insights regarding the health, performance, and usage patterns of an application."
+    }
+  ]
+}

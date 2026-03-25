@@ -1,0 +1,102 @@
+{
+  "id": "02-networking-serverless",
+  "pathId": "aws",
+  "title": "VPC Basics, Lambda & API Gateway",
+  "conceptExplanation": "A **VPC** is your isolated network; **subnets** split it across AZs. **Lambda** runs event-driven functions; pair it with **API Gateway** for HTTP APIs. NAT gateways and route tables control internet egress from private subnets.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "aws-02-mc",
+      "type": "multiple_choice",
+      "question": "Which AWS service runs short-lived, event-driven code without provisioning servers?",
+      "options": [
+        "AWS Lambda",
+        "Amazon RDS",
+        "Elastic Beanstalk only",
+        "AWS Outposts"
+      ],
+      "correctAnswer": "AWS Lambda",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aws-02-tf",
+      "type": "true_false",
+      "question": "API Gateway can front Lambda functions to expose HTTPS endpoints.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aws-02-fib",
+      "type": "fill_in_blank",
+      "question": "In AWS networking, _____ connect subnets and control traffic between them and the internet.",
+      "correctAnswer": "route tables",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-networking-serverless-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Aws module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary purpose of a VPC?",
+      "back": "To provide a logically isolated section of the AWS cloud where you can launch resources in a defined virtual network."
+    },
+    {
+      "front": "True or False: A Lambda function in a private subnet can access the internet without a NAT Gateway.",
+      "back": "False; it requires a NAT Gateway and a route table entry to route traffic to the public internet."
+    },
+    {
+      "front": "What does API Gateway act as in a serverless architecture?",
+      "back": "It acts as the 'front door' or entry point that handles HTTP requests and triggers backend services like Lambda."
+    },
+    {
+      "front": "What is the difference between a public and private subnet?",
+      "back": "Public subnets have a direct route to an Internet Gateway, while private subnets do not."
+    },
+    {
+      "front": "How are you charged for AWS Lambda functions?",
+      "back": "You pay only for the number of requests and the duration (time) it takes for your code to execute."
+    },
+    {
+      "front": "What component is used to direct network traffic leaving a subnet?",
+      "back": "A Route Table, which contains rules called routes to determine where traffic is sent."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Gated Apartment Complex",
+      "analogy": "The VPC is the entire gated community; subnets are the individual buildings within it. The Security Group is the guard at your specific apartment door.",
+      "explanation": "The VPC provides the perimeter, subnets organize the internal space, and security groups control who enters specific resources."
+    },
+    {
+      "title": "The Restaurant Order",
+      "analogy": "API Gateway is the waiter taking your order, and Lambda is the chef who only starts cooking when an order is placed.",
+      "explanation": "API Gateway manages the request interface, while Lambda provides the event-driven compute power that only runs when triggered."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "VPC",
+      "definition": "A private, isolated virtual network environment within the AWS cloud."
+    },
+    {
+      "term": "Subnet",
+      "definition": "A range of IP addresses in your VPC used to group resources based on security and operational needs."
+    },
+    {
+      "term": "Lambda",
+      "definition": "A serverless compute service that runs code in response to events without managing servers."
+    },
+    {
+      "term": "API Gateway",
+      "definition": "A fully managed service that makes it easy for developers to create, publish, and secure APIs."
+    },
+    {
+      "term": "NAT Gateway",
+      "definition": "A service that allows resources in a private subnet to connect to the internet while preventing the internet from initiating connections with them."
+    }
+  ]
+}

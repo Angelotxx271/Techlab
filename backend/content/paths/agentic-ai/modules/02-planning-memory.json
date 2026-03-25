@@ -1,0 +1,102 @@
+{
+  "id": "02-planning-memory",
+  "pathId": "agentic-ai",
+  "title": "Planning Steps, State & Human-in-the-Loop",
+  "conceptExplanation": "**Planning** breaks goals into steps; **memory** can be short-term (conversation) or long-term (vector DB, notes). **State** tracks what succeeded. Re-invoking models with updated scratchpads is a simple pattern; more complex systems use graphs or explicit planners.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "aa-02-mc",
+      "type": "multiple_choice",
+      "question": "Why add explicit memory to an agent?",
+      "options": [
+        "Persist facts across sessions and reduce repeated context",
+        "Replace the need for any model",
+        "Guarantee deterministic outputs",
+        "Remove the need for tools"
+      ],
+      "correctAnswer": "Persist facts across sessions and reduce repeated context",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "aa-02-tf",
+      "type": "true_false",
+      "question": "Human-in-the-loop can gate high-risk tool calls even when the model proposes them.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aa-02-fib",
+      "type": "fill_in_blank",
+      "question": "Retrieval-augmented generation combines a model with a _____ store of documents or records.",
+      "correctAnswer": "knowledge",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-planning-memory-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Agentic Ai module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary role of a 'planner' in an agentic system?",
+      "back": "To decompose a complex, high-level goal into a sequence of smaller, actionable sub-tasks."
+    },
+    {
+      "front": "How does 'State' differ from 'Memory' in AI agents?",
+      "back": "State tracks current progress and variables of a specific task, while memory stores past knowledge or interactions."
+    },
+    {
+      "front": "What is the 'Scratchpad' technique?",
+      "back": "A method where the model records its internal reasoning and intermediate steps before delivering a final output."
+    },
+    {
+      "front": "What is a common 'gotcha' when designing autonomous planners?",
+      "back": "Over-planning, which can lead to rigid execution that fails to adapt when an intermediate step produces an unexpected result."
+    },
+    {
+      "front": "Why is 'Human-in-the-Loop' (HITL) used in agentic workflows?",
+      "back": "To provide a safety checkpoint where a person approves, rejects, or corrects the agent's proposed plan or action."
+    },
+    {
+      "front": "What happens when an agent 're-invokes' itself with an updated state?",
+      "back": "It processes the results of its previous action to decide the next logical step toward the goal."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Head Chef and the Order Ticket",
+      "analogy": "A head chef receives a large dinner order and breaks it down into prep tasks for different stations while checking items off the ticket.",
+      "explanation": "The order ticket represents 'State' (tracking what's done), and the breakdown of the recipe represents 'Planning'."
+    },
+    {
+      "title": "The GPS Navigator",
+      "analogy": "A GPS calculates a route (planning), monitors your current location (state), and recalculates if you hit a road closure (re-invocation).",
+      "explanation": "This maps to how agents use state to understand their current position and adjust their plan dynamically based on environmental feedback."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "State Management",
+      "definition": "The process of persisting and updating an agent's progress and variables throughout a multi-step task."
+    },
+    {
+      "term": "Vector Database",
+      "definition": "A storage system used for long-term memory that allows agents to retrieve relevant information via semantic similarity."
+    },
+    {
+      "term": "Decomposition",
+      "definition": "The act of breaking a complex prompt or goal into a series of smaller, more manageable logical steps."
+    },
+    {
+      "term": "Human-in-the-Loop",
+      "definition": "A design pattern that requires human intervention or approval at critical decision points within an automated process."
+    },
+    {
+      "term": "Reasoning Loop",
+      "definition": "The iterative cycle where an agent thinks, acts, observes the result, and updates its plan accordingly."
+    }
+  ]
+}

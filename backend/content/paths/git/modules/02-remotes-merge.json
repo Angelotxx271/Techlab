@@ -1,0 +1,102 @@
+{
+  "id": "02-remotes-merge",
+  "pathId": "git",
+  "title": "Remotes, Pull & Merge vs Rebase",
+  "conceptExplanation": "**Remotes** (often `origin`) track server-side branches. `git fetch` downloads objects; `git pull` fetches and merges (or rebases with config). **Merge** preserves history; **rebase** replays commits for a linear story — choose per team policy.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "git-02-mc",
+      "type": "multiple_choice",
+      "question": "What does `git push origin main` do?",
+      "options": [
+        "Upload local commits on main to the remote named origin",
+        "Download all branches",
+        "Delete origin",
+        "Create a tag on origin only"
+      ],
+      "correctAnswer": "Upload local commits on main to the remote named origin",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "git-02-tf",
+      "type": "true_false",
+      "question": "`git fetch` updates remote-tracking branches without merging into your current branch.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "git-02-fib",
+      "type": "fill_in_blank",
+      "question": "The default name for the primary remote is often _____.",
+      "correctAnswer": "origin",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "02-remotes-merge-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Git module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is 'origin' in the context of Git?",
+      "back": "The default alias for the remote server URL from which the repository was originally cloned."
+    },
+    {
+      "front": "How does 'git fetch' differ from 'git pull'?",
+      "back": "'fetch' only downloads remote data to your local database; 'pull' downloads data and immediately tries to merge it into your current branch."
+    },
+    {
+      "front": "What is the main benefit of using 'git rebase' over 'git merge'?",
+      "back": "It creates a clean, linear project history by moving your local commits to the tip of the target branch."
+    },
+    {
+      "front": "What is a 'merge commit'?",
+      "back": "A special commit created by 'git merge' that has two parent commits, representing the junction of two branches."
+    },
+    {
+      "front": "Why should you avoid rebasing public shared branches?",
+      "back": "It rewrites history by changing commit hashes, which confuses other collaborators' local repositories."
+    },
+    {
+      "front": "Which command allows you to see remote changes without altering your working directory?",
+      "back": "git fetch"
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Office Newsletter",
+      "analogy": "Fetch is like receiving a notification that the newsletter is available on the company portal; Pull is like downloading and saving that newsletter into your personal folder.",
+      "explanation": "Fetch updates your local tracking of what exists on the server, while Pull actually integrates that remote work into your local files."
+    },
+    {
+      "title": "Writing a Group Story",
+      "analogy": "Merging is like taping a friend's new chapter onto the end of your book; Rebasing is like rewriting your chapter so it starts exactly where your friend's chapter finished.",
+      "explanation": "Merge preserves the 'fork' where you both worked simultaneously, while Rebase makes it look like you worked sequentially."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Remote",
+      "definition": "A version of your project hosted on the internet or a network, allowing team members to share changes."
+    },
+    {
+      "term": "Upstream",
+      "definition": "The primary remote repository that a local branch tracks for updates and synchronization."
+    },
+    {
+      "term": "Fetch",
+      "definition": "An operation that downloads objects and refs from another repository without modifying your current work."
+    },
+    {
+      "term": "Merge",
+      "definition": "The act of joining two or more development histories together into a single branch."
+    },
+    {
+      "term": "Rebase",
+      "definition": "The process of reapplying commits on top of another base tip to maintain a straight line of history."
+    }
+  ]
+}

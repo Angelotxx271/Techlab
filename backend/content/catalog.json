@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "id": "web-frameworks",
+      "name": "Web Frameworks",
+      "description": "Learn popular web frameworks for building modern applications",
+      "paths": ["django", "flask", "fastapi"]
+    },
+    {
+      "id": "cloud-platforms",
+      "name": "Cloud Platforms",
+      "description": "Master cloud computing with provider-specific learning paths",
+      "paths": ["aws", "gcp", "azure"]
+    },
+    {
+      "id": "containerization-orchestration",
+      "name": "Containerization & Orchestration",
+      "description": "Package, deploy, and manage applications at scale",
+      "paths": ["docker", "kubernetes"]
+    },
+    {
+      "id": "ai-ml",
+      "name": "AI & Machine Learning",
+      "description": "Explore artificial intelligence, machine learning, and agentic systems",
+      "paths": ["agentic-ai", "mcps"]
+    },
+    {
+      "id": "devops",
+      "name": "DevOps",
+      "description": "Streamline development workflows with CI/CD, monitoring, and automation",
+      "paths": ["github-actions", "terraform"]
+    },
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools",
+      "description": "Boost productivity with essential developer tools and utilities",
+      "paths": ["git", "vscode"]
+    }
+  ]
+}

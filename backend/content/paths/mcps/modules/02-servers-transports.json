@@ -1,0 +1,102 @@
+{
+  "id": "02-servers-transports",
+  "pathId": "mcps",
+  "title": "Building MCP Servers & Transports",
+  "conceptExplanation": "MCP servers implement a documented capability set. **stdio** is common for local tools; **SSE/HTTP** suits remote deployments. Versioning and capability negotiation prevent mismatched clients and servers.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "mcp-02-mc",
+      "type": "multiple_choice",
+      "question": "Which transport is commonly used for local MCP servers launched as child processes?",
+      "options": [
+        "stdio",
+        "FTP",
+        "gRPC-only historic",
+        "SMB"
+      ],
+      "correctAnswer": "stdio",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "mcp-02-tf",
+      "type": "true_false",
+      "question": "An MCP server can expose multiple tools with distinct JSON schemas.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "mcp-02-fib",
+      "type": "fill_in_blank",
+      "question": "Browser or remote hosts may use _____-based streaming for MCP sessions over HTTP.",
+      "correctAnswer": "SSE",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "02-servers-transports-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Mcps module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary function of an MCP server?",
+      "back": "It exposes standardized tools, resources, and prompts that AI clients can interact with."
+    },
+    {
+      "front": "When is 'stdio' the preferred transport method?",
+      "back": "When building local tools where the server and client run on the same machine via command line pipes."
+    },
+    {
+      "front": "Why is SSE/HTTP used instead of stdio for some deployments?",
+      "back": "It allows servers to be hosted on remote infrastructure, enabling web-based connectivity."
+    },
+    {
+      "front": "What prevents a client from calling a tool the server doesn't support?",
+      "back": "Capability negotiation, where both parties agree on a supported feature set during the handshake."
+    },
+    {
+      "front": "What is a major risk of ignoring versioning in MCP?",
+      "back": "Protocol mismatches that lead to failed connections or unpredictable data parsing between client and server."
+    },
+    {
+      "front": "True or False: MCP servers can only provide tools.",
+      "back": "False; they can also provide structured resources and pre-defined prompts."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Universal Travel Adapter",
+      "analogy": "An MCP server is like a universal power adapter in a foreign country.",
+      "explanation": "It ensures that different devices (clients) can safely connect to the local power grid (data/tools) regardless of their original plug type."
+    },
+    {
+      "title": "The Restaurant Menu Exchange",
+      "analogy": "Capability negotiation is like a waiter telling a guest what's available before they order.",
+      "explanation": "It prevents the guest (client) from asking for a dish (capability) that the kitchen (server) isn't equipped to cook."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "stdio",
+      "definition": "A standard communication channel using input/output streams for local process interaction."
+    },
+    {
+      "term": "SSE (Server-Sent Events)",
+      "definition": "A standard allowing servers to push real-time updates to web clients over HTTP."
+    },
+    {
+      "term": "Capability Negotiation",
+      "definition": "The process where a client and server communicate their supported features to ensure compatibility."
+    },
+    {
+      "term": "Transport Layer",
+      "definition": "The underlying mechanism (like stdio or HTTP) used to move MCP messages between entities."
+    },
+    {
+      "term": "MCP Host",
+      "definition": "The client application (like an IDE or AI chat) that initiates the connection to an MCP server."
+    }
+  ]
+}

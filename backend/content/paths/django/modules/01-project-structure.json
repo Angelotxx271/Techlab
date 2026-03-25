@@ -1,0 +1,103 @@
+{
+  "id": "01-project-structure",
+  "pathId": "django",
+  "title": "Projects, Apps & the MTV Flow",
+  "conceptExplanation": "A Django **project** is the overall configuration (settings, URLs, WSGI). An **app** is a reusable module (models, views, templates) that you plug into a project. Django uses an **MTV** pattern: URLs map to **views** (like controllers), views use **models** for data and choose **templates** for HTML. Run `django-admin startproject mysite` then `python manage.py startapp blog` to scaffold.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "dj-01-mc",
+      "type": "multiple_choice",
+      "question": "Which command creates a new Django app inside an existing project?",
+      "options": [
+        "python manage.py startapp blog",
+        "django-admin createapp blog",
+        "python manage.py newapp blog",
+        "pip install django-app blog"
+      ],
+      "correctAnswer": "python manage.py startapp blog",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "dj-01-tf",
+      "type": "true_false",
+      "question": "In Django, a single project can contain multiple apps.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "dj-01-fib",
+      "type": "fill_in_blank",
+      "question": "Django's URL routing maps paths to Python callable _____ that handle requests.",
+      "correctAnswer": "views",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "dj-01-cc",
+      "type": "code_completion",
+      "question": "Complete the manage.py command to apply database migrations:",
+      "codeTemplate": "python manage.py _____",
+      "correctAnswer": "migrate",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary difference between a Django Project and an App?",
+      "back": "A Project is the entire website configuration, while an App is a self-contained module for a specific feature."
+    },
+    {
+      "front": "Which command is used to create the initial Django project directory structure?",
+      "back": "django-admin startproject <project_name>"
+    },
+    {
+      "front": "In the MTV pattern, what is the 'View' responsible for?",
+      "back": "The View contains the logic that processes requests and connects Models to Templates."
+    },
+    {
+      "front": "True or False: A single Django project can contain multiple apps.",
+      "back": "True; Django is designed for modularity where one project manages many reusable apps."
+    },
+    {
+      "front": "What does the 'T' in Django's MTV pattern represent?",
+      "back": "Template, which is the presentation layer (usually HTML) that the user sees."
+    },
+    {
+      "front": "Which CLI tool is used to create a new app after the project is established?",
+      "back": "python manage.py startapp <app_name>"
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Smartphone Ecosystem",
+      "analogy": "The Django Project is the phone's operating system and settings, while an App is a specific tool like the Calculator or Instagram.",
+      "explanation": "The Project provides the global environment, but the Apps provide the specific features that can be installed or removed."
+    },
+    {
+      "title": "The Restaurant Kitchen",
+      "analogy": "The Model is the pantry (data), the Template is the plate (presentation), and the View is the Chef (logic).",
+      "explanation": "The Chef (View) takes ingredients from the pantry (Model) and arranges them beautifully on the plate (Template) to serve the customer."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Project",
+      "definition": "The top-level configuration and collection of settings for a specific website."
+    },
+    {
+      "term": "App",
+      "definition": "A web application that does something, such as a blog or a polling system, meant to be reusable."
+    },
+    {
+      "term": "MTV",
+      "definition": "Model-Template-View, Django's architectural pattern for separating data, logic, and presentation."
+    },
+    {
+      "term": "Model",
+      "definition": "The single, definitive source of truth about your data, defining fields and behaviors of stored information."
+    },
+    {
+      "term": "View",
+      "definition": "A function or class that receives a web request and returns a web response, acting as the logic bridge."
+    }
+  ]
+}

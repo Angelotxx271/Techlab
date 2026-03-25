@@ -1,0 +1,103 @@
+{
+  "id": "01-routing-app",
+  "pathId": "flask",
+  "title": "Flask Apps, Routes & Request Context",
+  "conceptExplanation": "A **Flask application** is a WSGI app instance (`Flask(__name__)`). Routes are registered with `@app.route('/path')` decorators or `app.add_url_rule`. The **request** and **session** objects provide access to incoming data and signed cookies. For production you run behind **Gunicorn** or **Waitress**, not the built-in development server.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "fl-01-mc",
+      "type": "multiple_choice",
+      "question": "What does Flask's built-in server print as a warning when you run app.run() in production?",
+      "options": [
+        "It is a development server; do not use it in production",
+        "Server is deprecated",
+        "SSL certificate missing",
+        "Threads are unsupported"
+      ],
+      "correctAnswer": "It is a development server; do not use it in production",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "fl-01-tf",
+      "type": "true_false",
+      "question": "Flask is classified as a microframework because it ships a minimal core and adds features via extensions.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "fl-01-fib",
+      "type": "fill_in_blank",
+      "question": "In Flask, JSON request bodies are typically read via request.get_json() from flask._____.",
+      "correctAnswer": "request",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "fl-01-cc",
+      "type": "code_completion",
+      "question": "Complete the import for the Flask class:",
+      "codeTemplate": "from flask import _____",
+      "correctAnswer": "Flask",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What does the `__name__` argument in `Flask(__name__)` represent?",
+      "back": "It tells Flask the location of the current module so it can find associated templates and static files."
+    },
+    {
+      "front": "How do you map a URL path to a specific Python function?",
+      "back": "By using the `@app.route('/path')` decorator directly above the function definition."
+    },
+    {
+      "front": "True or False: The built-in Flask development server is safe for public production use.",
+      "back": "False; it is not designed for security or high concurrency and should be replaced by Gunicorn or Waitress."
+    },
+    {
+      "front": "Which object would you use to retrieve data sent via an HTML form POST request?",
+      "back": "The `request.form` dictionary-like object."
+    },
+    {
+      "front": "What is the primary difference between the `request` and `session` objects?",
+      "back": "The `request` object lasts for one specific interaction, while the `session` persists data across multiple requests using cookies."
+    },
+    {
+      "front": "What happens if you define a route but forget to return a value from the function?",
+      "back": "Flask will raise a TypeError because every view function must return a response object or string."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Office Receptionist",
+      "analogy": "Imagine a large office building where a receptionist sits at the front desk and checks every visitor's destination.",
+      "explanation": "The routes act as the receptionist, taking the incoming URL (the visitor) and directing them to the correct office (the function) to get what they need."
+    },
+    {
+      "title": "The Waiter's Notepad",
+      "analogy": "A waiter takes your specific order on a notepad, carries it to the kitchen, and brings your specific food back.",
+      "explanation": "The 'request' object is the notepad; it holds all the specific details of your current visit until your response is served."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "WSGI",
+      "definition": "The standard protocol that allows Python web applications to communicate with web servers."
+    },
+    {
+      "term": "Route",
+      "definition": "A specific URL pattern linked to a Python function that handles incoming traffic for that address."
+    },
+    {
+      "term": "View Function",
+      "definition": "A Python function that responds to a route and returns the content to be displayed to the user."
+    },
+    {
+      "term": "Request Context",
+      "definition": "A temporary state that makes the 'request' object globally accessible to your code during a single HTTP cycle."
+    },
+    {
+      "term": "Gunicorn",
+      "definition": "A production-grade WSGI HTTP server used to run Flask applications reliably at scale."
+    }
+  ]
+}

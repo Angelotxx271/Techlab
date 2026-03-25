@@ -1,0 +1,108 @@
+{
+  "id": "01-containers-basics",
+  "pathId": "docker",
+  "title": "Containers & Docker Fundamentals",
+  "conceptExplanation": "Docker is a platform for building, shipping, and running applications inside lightweight, isolated environments called containers. Unlike virtual machines, containers share the host OS kernel, making them fast to start and efficient with resources.\n\nKey concepts:\n- **Image**: A read-only template with instructions for creating a container (like a class in OOP).\n- **Container**: A running instance of an image (like an object).\n- **Docker Hub**: A public registry for sharing Docker images.\n- **Dockerfile**: A text file with instructions to build a Docker image.\n\nBasic commands:\n```bash\ndocker pull nginx          # Download an image\ndocker run -d -p 80:80 nginx  # Run a container in detached mode\ndocker ps                  # List running containers\ndocker stop <container_id> # Stop a container\n```\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "ex-01",
+      "type": "multiple_choice",
+      "question": "What is the main difference between a Docker container and a virtual machine?",
+      "options": [
+        "Containers share the host OS kernel while VMs each run their own OS",
+        "Containers are slower to start than VMs",
+        "VMs are more lightweight than containers",
+        "Containers require a hypervisor to run"
+      ],
+      "correctAnswer": "Containers share the host OS kernel while VMs each run their own OS",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-02",
+      "type": "true_false",
+      "question": "A Docker image is a running instance of a container.",
+      "correctAnswer": "false",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-03",
+      "type": "fill_in_blank",
+      "question": "The command `docker run -d -p 80:80 nginx` maps port 80 on the _____ to port 80 in the container.",
+      "correctAnswer": "host",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-04",
+      "type": "multiple_choice",
+      "question": "Which command lists all currently running Docker containers?",
+      "options": [
+        "docker ps",
+        "docker list",
+        "docker containers",
+        "docker running"
+      ],
+      "correctAnswer": "docker ps",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary difference between a Docker image and a container?",
+      "back": "An image is a static, read-only blueprint, while a container is a live, executable instance of that image."
+    },
+    {
+      "front": "Why are containers more resource-efficient than Virtual Machines?",
+      "back": "Containers share the host machine's OS kernel instead of requiring a full guest operating system for every instance."
+    },
+    {
+      "front": "What is the role of Docker Hub in the container lifecycle?",
+      "back": "It serves as a public registry where developers can store, share, and download pre-built container images."
+    },
+    {
+      "front": "True or False: A single Docker image can be used to launch multiple containers simultaneously.",
+      "back": "True; you can spin up many identical containers from the same underlying image."
+    },
+    {
+      "front": "What happens to data stored inside a container when it is deleted?",
+      "back": "The data is lost by default because containers are ephemeral; persistent data must be stored in external volumes."
+    },
+    {
+      "front": "What file acts as the 'script' or set of instructions to build a Docker image?",
+      "back": "The Dockerfile, which contains all commands a user would call on the command line to assemble an image."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Shipping Container",
+      "analogy": "Standardized metal boxes can hold any goods and fit perfectly on any ship, truck, or crane in the world without being opened.",
+      "explanation": "Docker wraps software into a standard package that runs identically on any computer, regardless of the specific hardware or OS settings."
+    },
+    {
+      "title": "The Recipe vs. The Cake",
+      "analogy": "A recipe is a static list of ingredients and steps written on paper, while the cake is the actual edible result you bake in the oven.",
+      "explanation": "The Docker Image is the recipe (the instructions), and the Container is the cake (the running application)."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Image",
+      "definition": "A read-only template used to create containers, containing the application code and all its dependencies."
+    },
+    {
+      "term": "Container",
+      "definition": "A lightweight, isolated environment where an application actually runs."
+    },
+    {
+      "term": "Docker Hub",
+      "definition": "The largest cloud-based library and community for container images."
+    },
+    {
+      "term": "Kernel",
+      "definition": "The core of the host operating system that Docker containers share to manage hardware resources."
+    },
+    {
+      "term": "Dockerfile",
+      "definition": "A text document containing all the commands to assemble a specific Docker image."
+    }
+  ]
+}

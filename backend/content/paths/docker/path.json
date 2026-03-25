@@ -1,0 +1,12 @@
+{
+  "id": "docker",
+  "title": "Docker",
+  "description": "Containerize applications with Docker — build, ship, and run anywhere",
+  "category": "containerization-orchestration",
+  "estimatedDuration": "2.5 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-containers-basics", "title": "Containers & Docker Fundamentals", "order": 1 },
+    { "id": "02-images-and-compose", "title": "Docker Images, Dockerfiles & Compose", "order": 2 }
+  ]
+}

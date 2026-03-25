@@ -1,0 +1,102 @@
+{
+  "id": "02-run-serverless",
+  "pathId": "gcp",
+  "title": "Cloud Run & Cloud Functions",
+  "conceptExplanation": "**Cloud Run** runs containerized HTTP services with scale-to-zero. **Cloud Functions** runs single-purpose functions triggered by events (Pub/Sub, HTTP, etc.). Both are serverless-style compute distinct from managing GCE VMs directly.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "gcp-02-mc",
+      "type": "multiple_choice",
+      "question": "Which GCP product runs a container image as a request-serving service with autoscaling?",
+      "options": [
+        "Cloud Run",
+        "Cloud SQL",
+        "BigQuery",
+        "Vertex AI only"
+      ],
+      "correctAnswer": "Cloud Run",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "gcp-02-tf",
+      "type": "true_false",
+      "question": "Cloud Functions can be triggered by HTTP requests.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "gcp-02-fib",
+      "type": "fill_in_blank",
+      "question": "Cloud Run services listen on the port defined by the _____ environment variable (commonly 8080).",
+      "correctAnswer": "PORT",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "02-run-serverless-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Gcp module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary deployment unit for Cloud Run?",
+      "back": "A container image (typically Docker)."
+    },
+    {
+      "front": "How do Cloud Functions differ from Cloud Run in terms of code?",
+      "back": "Functions are small snippets of code for single tasks, while Run handles full containerized apps."
+    },
+    {
+      "front": "What does 'Scale-to-Zero' mean for your billing?",
+      "back": "You are not charged when your application or function is not actively processing requests."
+    },
+    {
+      "front": "Which service is better for a complex web app with specific OS dependencies?",
+      "back": "Cloud Run, because you can customize the entire container environment."
+    },
+    {
+      "front": "What is a 'Cold Start' in the context of these services?",
+      "back": "The latency delay that occurs when a service spins up a new instance from zero."
+    },
+    {
+      "front": "True or False: Cloud Functions can be triggered by a file upload to Cloud Storage.",
+      "back": "True; they are designed for event-driven triggers like storage or Pub/Sub changes."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Motion-Sensor Light",
+      "analogy": "Cloud Functions are like a motion-sensor porch light that stays off until someone walks by, performs one task, and then shuts off.",
+      "explanation": "This maps to event-driven execution where code only runs in response to a specific trigger and stops immediately after."
+    },
+    {
+      "title": "The Pre-Packaged Food Truck",
+      "analogy": "Cloud Run is like a food truck where the kitchen and ingredients are already packed inside; you just drive it to a spot, serve customers, and drive away.",
+      "explanation": "This represents containerization, where everything the app needs is bundled together and can be deployed anywhere consistently."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Serverless",
+      "definition": "A cloud model where the provider manages all infrastructure, scaling, and maintenance automatically."
+    },
+    {
+      "term": "Containerization",
+      "definition": "Packaging an application and its dependencies into a single image to ensure it runs the same on any environment."
+    },
+    {
+      "term": "Event Trigger",
+      "definition": "A specific signal, like a database update or a message, that causes a function to execute."
+    },
+    {
+      "term": "Stateless",
+      "definition": "A design where the application does not store user data locally between requests, allowing it to scale easily."
+    },
+    {
+      "term": "Pub/Sub",
+      "definition": "A messaging service used to connect different microservices and trigger Cloud Functions asynchronously."
+    }
+  ]
+}

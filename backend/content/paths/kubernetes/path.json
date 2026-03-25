@@ -1,0 +1,12 @@
+{
+  "id": "kubernetes",
+  "title": "Kubernetes",
+  "description": "Orchestrate containers at scale — Pods, Deployments, Services, ConfigMaps, and kubectl workflows",
+  "category": "containerization-orchestration",
+  "estimatedDuration": "3.5 hours",
+  "difficulty": "advanced",
+  "modules": [
+    { "id": "01-pods-deployments", "title": "Pods, Deployments & ReplicaSets", "order": 1 },
+    { "id": "02-services-config", "title": "Services, ConfigMaps & Namespaces", "order": 2 }
+  ]
+}

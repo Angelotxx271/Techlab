@@ -1,0 +1,12 @@
+{
+  "id": "flask",
+  "title": "Flask",
+  "description": "Lightweight Python web apps with Flask — routing, blueprints, and integration with WSGI servers",
+  "category": "web-frameworks",
+  "estimatedDuration": "2.5 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-routing-app", "title": "Flask Apps, Routes & Request Context", "order": 1 },
+    { "id": "02-blueprints-templates", "title": "Blueprints, Templates & Static Assets", "order": 2 }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "vscode",
+  "title": "Visual Studio Code",
+  "description": "Productive editing with VS Code — command palette, multi-cursor debugging, tasks, and extensions",
+  "category": "developer-tools",
+  "estimatedDuration": "1.5 hours",
+  "difficulty": "beginner",
+  "modules": [
+    { "id": "01-editor-essentials", "title": "Editor Essentials & Navigation", "order": 1 },
+    { "id": "02-debug-tasks", "title": "Debugging, Tasks & Extensions", "order": 2 }
+  ]
+}

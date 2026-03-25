@@ -1,0 +1,103 @@
+{
+  "id": "01-hcl-state",
+  "pathId": "terraform",
+  "title": "HCL Basics, Providers & State",
+  "conceptExplanation": "Terraform uses **HCL** (`*.tf` files) to declare resources. **Providers** (AWS, Azure, GCP) map resources to cloud APIs. **State** tracks real-world IDs; `terraform plan` diffs config vs state vs remote reality.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "tf-01-mc",
+      "type": "multiple_choice",
+      "question": "Which command shows what Terraform would change without applying?",
+      "options": [
+        "terraform plan",
+        "terraform fmt",
+        "terraform graph only",
+        "terraform refresh only"
+      ],
+      "correctAnswer": "terraform plan",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "tf-01-tf",
+      "type": "true_false",
+      "question": "Terraform state should typically be stored in remote backends when teams collaborate.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "tf-01-fib",
+      "type": "fill_in_blank",
+      "question": "Blocks that declare cloud resources start with the keyword _____.",
+      "correctAnswer": "resource",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "tf-01-cc",
+      "type": "code_completion",
+      "question": "Complete: initialize a Terraform working directory",
+      "codeTemplate": "terraform _____",
+      "correctAnswer": "init",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary role of a Provider in Terraform?",
+      "back": "It acts as a translation layer between Terraform commands and specific cloud APIs like AWS or Azure."
+    },
+    {
+      "front": "Which file extension is required for all Terraform configuration files?",
+      "back": "The .tf extension is used for HCL files."
+    },
+    {
+      "front": "Why is the terraform.tfstate file considered the 'source of truth'?",
+      "back": "It stores the mapping of your code to specific, real-world resource IDs created in the cloud."
+    },
+    {
+      "front": "What happens if you delete your state file but keep your .tf code?",
+      "back": "Terraform will lose track of existing resources and try to create duplicates from scratch."
+    },
+    {
+      "front": "What does the 'terraform plan' command actually compare?",
+      "back": "It compares your current code against the state file and the live cloud environment to identify changes."
+    },
+    {
+      "front": "How are resource names structured in HCL to indicate their provider?",
+      "back": "The resource type prefix (e.g., 'aws_' in 'aws_instance') tells Terraform which provider to use."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Universal Remote and the TV",
+      "analogy": "A universal remote (Terraform) has a standard 'Power' button (HCL), but it needs specific device codes (Providers) to talk to different brands like Sony or LG.",
+      "explanation": "HCL provides a consistent way to write code, while Providers translate that code into instructions the specific cloud API understands."
+    },
+    {
+      "title": "The Architect's Ledger",
+      "analogy": "An architect has a blueprint (HCL), but also keeps a ledger (State) that records exactly which contractor built which wall and when.",
+      "explanation": "The blueprint says what SHOULD exist; the ledger tracks what ACTUALLY exists so the architect knows which parts to fix or add."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "HCL",
+      "definition": "HashiCorp Configuration Language, the human-readable language used to define infrastructure."
+    },
+    {
+      "term": "Provider",
+      "definition": "A plugin that allows Terraform to interact with cloud platforms, SaaS providers, and other APIs."
+    },
+    {
+      "term": "State",
+      "definition": "A JSON file that tracks the relationship between your configuration and the real-world resources it created."
+    },
+    {
+      "term": "Resource",
+      "definition": "The smallest unit of infrastructure defined in code, such as a virtual server or a database."
+    },
+    {
+      "term": "Declarative",
+      "definition": "A programming style where you describe the desired end-state rather than the step-by-step instructions to get there."
+    }
+  ]
+}

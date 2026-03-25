@@ -1,0 +1,103 @@
+{
+  "id": "01-intro",
+  "pathId": "fastapi",
+  "title": "Introduction to FastAPI",
+  "conceptExplanation": "FastAPI is a modern, high-performance Python web framework for building APIs. It leverages Python type hints and Pydantic for automatic request validation, serialization, and interactive API documentation (Swagger UI and ReDoc). FastAPI is built on top of Starlette for the web layer and Pydantic for data handling, making it one of the fastest Python frameworks available — on par with Node.js and Go in benchmarks. A minimal FastAPI app looks like this:\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'message': 'Hello, World!'}\n```\n\nYou run it with Uvicorn: `uvicorn main:app --reload`. The `--reload` flag enables hot-reloading during development.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "ex-01",
+      "type": "multiple_choice",
+      "question": "Which command starts a FastAPI application with hot-reload enabled?",
+      "options": [
+        "uvicorn main:app --reload",
+        "python main.py --serve",
+        "fastapi run main.py",
+        "flask run --reload"
+      ],
+      "correctAnswer": "uvicorn main:app --reload",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-02",
+      "type": "true_false",
+      "question": "FastAPI automatically generates interactive API documentation (Swagger UI) without any additional configuration.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ex-03",
+      "type": "fill_in_blank",
+      "question": "FastAPI is built on top of _____ for the web layer and Pydantic for data validation.",
+      "correctAnswer": "Starlette",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ex-04",
+      "type": "code_completion",
+      "question": "Complete the FastAPI route that returns a JSON greeting message:",
+      "codeTemplate": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return ___",
+      "correctAnswer": "{'message': 'Hello, World!'}",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What two core libraries serve as the foundation for FastAPI?",
+      "back": "Starlette handles the web/routing layer, while Pydantic manages data validation and serialization."
+    },
+    {
+      "front": "How does FastAPI achieve performance comparable to Node.js and Go?",
+      "back": "By utilizing an asynchronous (ASGI) foundation and optimized data handling via Pydantic."
+    },
+    {
+      "front": "What happens if a client sends a string to an endpoint expecting an integer?",
+      "back": "FastAPI automatically returns a clear 422 Unprocessable Entity error explaining exactly what went wrong."
+    },
+    {
+      "front": "Where can a developer find the automatically generated interactive documentation?",
+      "back": "By navigating to the `/docs` (Swagger UI) or `/redoc` (ReDoc) endpoints of the running application."
+    },
+    {
+      "front": "What is the role of Python type hints in a FastAPI application?",
+      "back": "They define the data schema for validation, serialization, and the automatic documentation of API parameters."
+    },
+    {
+      "front": "Does FastAPI support standard synchronous functions alongside asynchronous ones?",
+      "back": "Yes, it can handle both regular `def` and `async def` functions, managing threads automatically for the former."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Strict Airport Security Check",
+      "analogy": "A security gate where every passenger must have a passport that matches a specific template before they can even enter the terminal.",
+      "explanation": "FastAPI uses Pydantic to validate incoming data against defined models; if the 'passport' (data) doesn't match the 'template' (type hints), the request is rejected immediately."
+    },
+    {
+      "title": "The Self-Writing Instruction Manual",
+      "analogy": "A specialized coffee machine that automatically prints a clear, illustrated user guide every time you add a new flavor or setting.",
+      "explanation": "When you add a new route or data model in FastAPI, the framework instantly updates the Swagger UI documentation without any manual writing."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Pydantic",
+      "definition": "The library FastAPI uses for data validation and settings management through Python type annotations."
+    },
+    {
+      "term": "Starlette",
+      "definition": "A lightweight ASGI framework that provides FastAPI with its core web capabilities like routing and middleware."
+    },
+    {
+      "term": "ASGI",
+      "definition": "Asynchronous Server Gateway Interface, the modern standard allowing Python web apps to handle many concurrent connections."
+    },
+    {
+      "term": "Serialization",
+      "definition": "The process of converting Python objects into a format like JSON that can be transmitted over the internet."
+    },
+    {
+      "term": "Swagger UI",
+      "definition": "An interactive web page generated by FastAPI that allows users to test API endpoints directly in their browser."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "01-editor-essentials",
+  "pathId": "vscode",
+  "title": "Editor Essentials & Navigation",
+  "conceptExplanation": "**Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) runs commands. **Quick Open** (`Ctrl+P`) jumps to files. **Multi-cursor** (`Alt+Click` / `Ctrl+D`) edits multiple occurrences. The **integrated terminal** splits below the editor.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "vs-01-mc",
+      "type": "multiple_choice",
+      "question": "Which shortcut opens the Command Palette on Windows/Linux by default?",
+      "options": [
+        "Ctrl+Shift+P",
+        "Ctrl+Alt+Del",
+        "Ctrl+Shift+Esc",
+        "Win+X"
+      ],
+      "correctAnswer": "Ctrl+Shift+P",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "vs-01-tf",
+      "type": "true_false",
+      "question": "VS Code workspaces can include multiple root folders in one window.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "vs-01-fib",
+      "type": "fill_in_blank",
+      "question": "Quick Open for files is commonly bound to Ctrl+_____ on Windows.",
+      "correctAnswer": "P",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "vs-01-cc",
+      "type": "code_completion",
+      "question": "Submit the standard relative path for workspace-specific VS Code settings (from repo root):",
+      "codeTemplate": ".vscode/settings.json",
+      "correctAnswer": ".vscode/settings.json",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary keyboard shortcut to access all VS Code commands?",
+      "back": "Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (macOS) to open the Command Palette."
+    },
+    {
+      "front": "How do you quickly jump to a specific file without using the sidebar?",
+      "back": "Use Quick Open by pressing Ctrl+P (Windows/Linux) or Cmd+P (macOS)."
+    },
+    {
+      "front": "What happens when you press Ctrl+D (or Cmd+D) while a word is selected?",
+      "back": "It selects the next occurrence of that word and adds an additional cursor for multi-editing."
+    },
+    {
+      "front": "True or False: You must leave VS Code to run shell commands in an external window.",
+      "back": "False; you can use the integrated terminal to run commands directly inside the editor."
+    },
+    {
+      "front": "How can you manually place cursors in multiple specific locations using the mouse?",
+      "back": "Hold the Alt key (Option on Mac) and click at each desired location."
+    },
+    {
+      "front": "How can you navigate to a specific line number within a file using Quick Open?",
+      "back": "Press Ctrl+P, type a colon (:), and then enter the line number."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Universal Remote",
+      "analogy": "Imagine a remote with a 'Search' button that lets you voice-command any action on your TV, from changing channels to updating software.",
+      "explanation": "The Command Palette is your single entry point for every feature and setting in the editor without memorizing every menu."
+    },
+    {
+      "title": "Stencil Painting",
+      "analogy": "Instead of hand-painting the same logo on ten different boxes one by one, you use a stencil to apply the paint to all of them simultaneously.",
+      "explanation": "Multi-cursors allow you to apply the same text edit to multiple lines or locations at once, saving repetitive effort."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Command Palette",
+      "definition": "A searchable menu used to execute any command or find settings within VS Code."
+    },
+    {
+      "term": "Quick Open",
+      "definition": "A fast navigation tool to find and open files by typing their names."
+    },
+    {
+      "term": "Multi-cursor",
+      "definition": "A feature allowing a user to have multiple insertion points for editing text in several places simultaneously."
+    },
+    {
+      "term": "Integrated Terminal",
+      "definition": "A built-in command-line interface that runs directly inside the VS Code window."
+    },
+    {
+      "term": "Keyboard Shortcut",
+      "definition": "A combination of keys that triggers a specific action or command within the software."
+    }
+  ]
+}

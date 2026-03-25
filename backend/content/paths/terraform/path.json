@@ -1,0 +1,12 @@
+{
+  "id": "terraform",
+  "title": "Terraform",
+  "description": "Infrastructure as code with HCL — state, providers, modules, and plan/apply workflows",
+  "category": "devops",
+  "estimatedDuration": "3 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-hcl-state", "title": "HCL Basics, Providers & State", "order": 1 },
+    { "id": "02-modules-workspaces", "title": "Modules, Variables & Workspaces", "order": 2 }
+  ]
+}

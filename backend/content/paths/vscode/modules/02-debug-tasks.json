@@ -1,0 +1,102 @@
+{
+  "id": "02-debug-tasks",
+  "pathId": "vscode",
+  "title": "Debugging, Tasks & Extensions",
+  "conceptExplanation": "**launch.json** configures debuggers (Node, Python, etc.). **tasks.json** defines build/test tasks run from Terminal → Run Task. The **Extensions** marketplace adds language servers, themes, and linters.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "vs-02-mc",
+      "type": "multiple_choice",
+      "question": "Where are debug configurations usually stored for a workspace?",
+      "options": [
+        ".vscode/launch.json",
+        ".debug/config.yml",
+        "launch.toml",
+        "settings.debug.json at user level only"
+      ],
+      "correctAnswer": ".vscode/launch.json",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "vs-02-tf",
+      "type": "true_false",
+      "question": "Tasks in tasks.json can bind to keyboard shortcuts or be run from the Command Palette.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "vs-02-fib",
+      "type": "fill_in_blank",
+      "question": "Workspace settings are often stored in .vscode/_____.json.",
+      "correctAnswer": "settings",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "02-debug-tasks-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Vscode module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "Which file is responsible for configuring the debugger settings in VS Code?",
+      "back": "launch.json"
+    },
+    {
+      "front": "Where do you define automation for building, testing, or linting code?",
+      "back": "tasks.json"
+    },
+    {
+      "front": "What happens if you try to debug without a launch.json file?",
+      "back": "VS Code will attempt to auto-detect the environment or prompt you to create a configuration."
+    },
+    {
+      "front": "What is the primary purpose of the VS Code Extensions Marketplace?",
+      "back": "To provide modular add-ons like language support, debuggers, and themes."
+    },
+    {
+      "front": "How do you run a specific task defined in your configuration?",
+      "back": "Navigate to the top menu and select Terminal → Run Task."
+    },
+    {
+      "front": "True or False: Extensions can only change the visual appearance of the editor.",
+      "back": "False; they can provide deep logic like code completion, linting, and language servers."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Swiss Army Knife",
+      "analogy": "VS Code is the handle, while Extensions are the specialized blades, saws, and scissors you unfold as needed.",
+      "explanation": "The core editor stays lightweight, but you plug in specific tools (extensions) for the specific job you are doing."
+    },
+    {
+      "title": "The Pit Crew and the Race Car",
+      "analogy": "The tasks.json file is the pit crew performing maintenance and prep, while launch.json is the ignition sequence to start the race.",
+      "explanation": "Tasks handle the background preparation (compiling/testing), while the debugger handles the actual execution and monitoring."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "launch.json",
+      "definition": "A configuration file used to define how VS Code should start and interact with a debugger."
+    },
+    {
+      "term": "tasks.json",
+      "definition": "A file that automates scripts or command-line operations like building, packaging, or testing code."
+    },
+    {
+      "term": "Debugger",
+      "definition": "A tool that allows you to pause code execution and inspect variables to find logic errors."
+    },
+    {
+      "term": "Linter",
+      "definition": "An extension or tool that analyzes your code for stylistic errors or potential bugs as you type."
+    },
+    {
+      "term": "Language Server",
+      "definition": "An extension component that provides advanced features like autocomplete and 'Go to Definition' for a specific language."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "01-workflows-jobs",
+  "pathId": "github-actions",
+  "title": "Workflows, Jobs & Runners",
+  "conceptExplanation": "Workflows live in `.github/workflows/*.yml`. A **job** runs on a **runner** (GitHub-hosted or self-hosted). **Steps** are shell or action calls. `on:` defines triggers (push, pull_request, schedule, workflow_dispatch).\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "ga-01-mc",
+      "type": "multiple_choice",
+      "question": "Where are GitHub Actions workflow files conventionally stored?",
+      "options": [
+        ".github/workflows/",
+        ".ci/pipelines/",
+        "actions/root/",
+        ".github/actions-only/"
+      ],
+      "correctAnswer": ".github/workflows/",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ga-01-tf",
+      "type": "true_false",
+      "question": "Jobs in the same workflow run on independent runner VMs unless you use needs/concurrency carefully.",
+      "correctAnswer": "true",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "ga-01-fib",
+      "type": "fill_in_blank",
+      "question": "The keyword that lists steps inside a job is _____.",
+      "correctAnswer": "steps",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "ga-01-cc",
+      "type": "code_completion",
+      "question": "Complete: run npm test in a step",
+      "codeTemplate": "- run: _____",
+      "correctAnswer": "npm test",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "In which directory must workflow YAML files be stored?",
+      "back": "They must be located in the `.github/workflows/` directory at the root of the repository."
+    },
+    {
+      "front": "By default, do multiple jobs in the same workflow run one after another or at the same time?",
+      "back": "Jobs run in parallel unless you use the `needs` keyword to create a dependency."
+    },
+    {
+      "front": "What is the purpose of the `on:` key in a workflow file?",
+      "back": "It defines the triggers or events, such as `push` or `schedule`, that cause the workflow to run."
+    },
+    {
+      "front": "What is the difference between a step using `run` vs. `uses`?",
+      "back": "`run` executes shell commands, while `uses` calls a specific GitHub Action (a reusable plugin)."
+    },
+    {
+      "front": "True or False: A single job can run across multiple different runners simultaneously.",
+      "back": "False; all steps within a single job execute sequentially on the same runner instance."
+    },
+    {
+      "front": "What happens to a runner once a job completes?",
+      "back": "GitHub-hosted runners are automatically destroyed, providing a clean environment for every job."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Restaurant Kitchen",
+      "analogy": "The workflow is the master recipe book; jobs are the specific stations like the grill or salad bar; and runners are the individual chefs.",
+      "explanation": "Just as a chef (runner) handles all tasks at the grill station (job) following the recipe (workflow), GitHub Actions assigns servers to handle specific sets of instructions."
+    },
+    {
+      "title": "The Construction Site",
+      "analogy": "The workflow is the blueprint; jobs are the phases like framing or plumbing; and the runner is the specialized crew assigned to that phase.",
+      "explanation": "The crew (runner) arrives to do the framing (job) as defined by the blueprint (workflow). If the plumbing job 'needs' the framing job, the plumbing crew waits for the framing to finish."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Workflow",
+      "definition": "An automated process defined in a YAML file that triggers based on specific repository events."
+    },
+    {
+      "term": "Job",
+      "definition": "A collection of steps that execute on the same runner; multiple jobs run in parallel by default."
+    },
+    {
+      "term": "Runner",
+      "definition": "A server that hosts the environment where your jobs and steps are actually executed."
+    },
+    {
+      "term": "Step",
+      "definition": "The smallest unit of a job, consisting of either a shell script or an action to be executed."
+    },
+    {
+      "term": "Event",
+      "definition": "A specific activity in a repository, like a pull request or a code push, that triggers a workflow."
+    }
+  ]
+}

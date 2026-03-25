@@ -1,0 +1,12 @@
+{
+  "id": "git",
+  "title": "Git",
+  "description": "Version control fundamentals — commits, branches, merges, remotes, and collaboration workflows",
+  "category": "developer-tools",
+  "estimatedDuration": "2 hours",
+  "difficulty": "beginner",
+  "modules": [
+    { "id": "01-commits-branches", "title": "Commits, Branches & History", "order": 1 },
+    { "id": "02-remotes-merge", "title": "Remotes, Pull & Merge vs Rebase", "order": 2 }
+  ]
+}

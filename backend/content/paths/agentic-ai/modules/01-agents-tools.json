@@ -1,0 +1,103 @@
+{
+  "id": "01-agents-tools",
+  "pathId": "agentic-ai",
+  "title": "Agents, Tools & Safety Basics",
+  "conceptExplanation": "An **agent** loops: observe context → plan or decide → **call tools** (APIs, code run, search) → update state. **Tools** must be described to the model with schemas. **Safety** includes human approval for irreversible actions, least-privilege credentials, and output filtering.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "aa-01-mc",
+      "type": "multiple_choice",
+      "question": "What distinguishes an agentic pattern from a single chat completion?",
+      "options": [
+        "Multi-step reasoning with tool use and environment feedback",
+        "Only longer prompts",
+        "Exclusive use of GPUs",
+        "Forcing JSON output only"
+      ],
+      "correctAnswer": "Multi-step reasoning with tool use and environment feedback",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "aa-01-tf",
+      "type": "true_false",
+      "question": "Tool definitions (name, parameters) help the model choose valid structured calls instead of hallucinating APIs.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aa-01-fib",
+      "type": "fill_in_blank",
+      "question": "A common safety pattern is _____-in-the-loop approval before destructive tool actions.",
+      "correctAnswer": "human",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "aa-01-cc",
+      "type": "code_completion",
+      "question": "Complete the line (replace the blank with the missing word):",
+      "codeTemplate": "plan → act with _____ → observe results",
+      "correctAnswer": "plan → act with tools → observe results",
+      "difficulty": "intermediate"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What are the four primary phases of an agent's execution loop?",
+      "back": "Observing context, planning the next move, calling external tools, and updating its internal state."
+    },
+    {
+      "front": "Why must tools be provided to the model with structured schemas?",
+      "back": "To ensure the model understands the required input parameters and the tool's specific purpose."
+    },
+    {
+      "front": "What is the 'Human-in-the-loop' safety pattern?",
+      "back": "A requirement for a person to review and approve an agent's proposed action before it executes."
+    },
+    {
+      "front": "How does the 'least-privilege' principle apply to AI agents?",
+      "back": "Agents should only have the minimum API permissions and credentials necessary to complete their specific task."
+    },
+    {
+      "front": "What is the risk of allowing an agent to run code without sandboxing?",
+      "back": "The agent could accidentally or maliciously damage the host system or access sensitive private files."
+    },
+    {
+      "front": "What does an agent do after a tool returns a result?",
+      "back": "It incorporates the tool's output into its context to decide if the task is finished or if more steps are needed."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Master Carpenter",
+      "analogy": "A carpenter looks at a blueprint, decides they need a hole, reaches for a specific drill bit described in their toolkit, and checks if the hole fits the screw.",
+      "explanation": "The carpenter is the agent, the blueprint is the context, the drill is the tool, and checking the fit is the state update."
+    },
+    {
+      "title": "The Corporate Credit Card",
+      "analogy": "A company gives an employee a card with a $500 limit specifically for office supplies, rather than access to the entire corporate bank account.",
+      "explanation": "This represents 'least-privilege' credentials, ensuring the agent can only perform specific, low-risk financial actions."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Agentic Loop",
+      "definition": "The iterative process of reasoning and acting that allows an AI to solve complex, multi-step problems."
+    },
+    {
+      "term": "Tool Calling",
+      "definition": "The ability of a model to output a structured request for an external system to perform an action."
+    },
+    {
+      "term": "Schema",
+      "definition": "A standardized blueprint that describes a tool's name, purpose, and required input variables to the model."
+    },
+    {
+      "term": "Least-Privilege",
+      "definition": "A security strategy of granting an agent the absolute minimum permissions required to perform its job."
+    },
+    {
+      "term": "Output Filtering",
+      "definition": "The process of screening agent responses to ensure they do not contain sensitive data or harmful instructions."
+    }
+  ]
+}

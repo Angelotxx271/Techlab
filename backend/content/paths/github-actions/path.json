@@ -1,0 +1,12 @@
+{
+  "id": "github-actions",
+  "title": "GitHub Actions",
+  "description": "Automate CI/CD with workflows, jobs, reusable actions, and secrets on GitHub",
+  "category": "devops",
+  "estimatedDuration": "2.5 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-workflows-jobs", "title": "Workflows, Jobs & Runners", "order": 1 },
+    { "id": "02-secrets-matrix", "title": "Secrets, Environments & Matrix Builds", "order": 2 }
+  ]
+}

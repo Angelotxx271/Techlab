@@ -1,0 +1,102 @@
+{
+  "id": "02-blueprints-templates",
+  "pathId": "flask",
+  "title": "Blueprints, Templates & Static Assets",
+  "conceptExplanation": "**Blueprints** group routes and can be mounted with a URL prefix — ideal for large apps. **Templates** live under `templates/` and use Jinja2 (`render_template`). **Static files** default to `static/` and `url_for('static', filename='...')` generates URLs.\n---\n\n**How to use this module:** Read the concept explanation, then work through the exercises in order. If you get stuck, use *Get a hint* — hints get more detailed each time without giving away the answer.",
+  "exercises": [
+    {
+      "id": "fl-02-mc",
+      "type": "multiple_choice",
+      "question": "How do you register a Blueprint named `bp` on an app with URL prefix /api?",
+      "options": [
+        "app.register_blueprint(bp, url_prefix='/api')",
+        "app.mount('/api', bp)",
+        "bp.attach(app, prefix='/api')",
+        "Flask.register(bp, '/api')"
+      ],
+      "correctAnswer": "app.register_blueprint(bp, url_prefix='/api')",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "fl-02-tf",
+      "type": "true_false",
+      "question": "Flask uses Jinja2 as its default templating engine.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "fl-02-fib",
+      "type": "fill_in_blank",
+      "question": "The function to render an HTML template by name is render_____ from flask.",
+      "correctAnswer": "template",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "02-blueprints-templates-enrich-4",
+      "type": "true_false",
+      "question": "Applying one idea from this Flask module in a small side project deepens understanding.",
+      "correctAnswer": "true",
+      "difficulty": "beginner"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What is the primary purpose of a Flask Blueprint?",
+      "back": "To organize a large application into smaller, modular components that can be easily maintained."
+    },
+    {
+      "front": "Which function is used to link a static file like 'style.css' in a template?",
+      "back": "The url_for('static', filename='style.css') function."
+    },
+    {
+      "front": "Where does Flask look for HTML files by default?",
+      "back": "In a directory named 'templates' located in the application or blueprint folder."
+    },
+    {
+      "front": "What does the 'url_prefix' argument do when registering a Blueprint?",
+      "back": "It adds a common path prefix to all routes defined within that specific blueprint."
+    },
+    {
+      "front": "What is Jinja2?",
+      "back": "The templating engine used by Flask to insert dynamic data into HTML files using specific syntax."
+    },
+    {
+      "front": "True or False: A single Flask application can use multiple Blueprints.",
+      "back": "True; Blueprints are designed to help scale apps by splitting functionality across multiple modules."
+    }
+  ],
+  "analogies": [
+    {
+      "title": "The Department Store",
+      "analogy": "Imagine a massive department store where 'Clothing,' 'Electronics,' and 'Home Goods' each have their own floor, manager, and layout.",
+      "explanation": "Blueprints are like these floors, allowing you to group related routes and logic into independent sections of one large store."
+    },
+    {
+      "title": "The Mad Libs Book",
+      "analogy": "A template is like a Mad Libs story with blanks, while static assets are the stickers and pre-printed photos on the page.",
+      "explanation": "Templates provide the structure where Jinja2 fills in the blanks, while static files provide the unchanging visual elements."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Blueprint",
+      "definition": "A modular way to organize a group of related routes, error handlers, and templates within a Flask app."
+    },
+    {
+      "term": "Jinja2",
+      "definition": "The default template engine for Flask that allows developers to write Python-like code inside HTML."
+    },
+    {
+      "term": "Static Asset",
+      "definition": "Unchanging files such as CSS, JavaScript, and images that are sent to the client as-is."
+    },
+    {
+      "term": "url_for",
+      "definition": "A helper function that generates URLs for specific functions or static files to avoid hardcoding paths."
+    },
+    {
+      "term": "render_template",
+      "definition": "The Flask function used to process a template file and return it as a complete HTML response to the user."
+    }
+  ]
+}

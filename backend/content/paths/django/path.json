@@ -1,0 +1,12 @@
+{
+  "id": "django",
+  "title": "Django",
+  "description": "Build full-stack web applications with Django — ORM, admin, auth, and batteries-included patterns",
+  "category": "web-frameworks",
+  "estimatedDuration": "3 hours",
+  "difficulty": "intermediate",
+  "modules": [
+    { "id": "01-project-structure", "title": "Projects, Apps & the MTV Flow", "order": 1 },
+    { "id": "02-models-orm", "title": "Models, Migrations & the Django ORM", "order": 2 }
+  ]
+}
