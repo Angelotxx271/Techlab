@@ -19,7 +19,7 @@ export default function LearningPathDetail() {
       setLoading(true);
       setError(null);
       try {
-        const p = await getPath(pathId);
+        const p = await getPath(pathId!);
         if (!cancelled) setPath(p);
       } catch {
         if (!cancelled) {

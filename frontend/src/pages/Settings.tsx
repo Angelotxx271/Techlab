@@ -5,7 +5,7 @@ import BadgeGrid from '../components/Badges/BadgeGrid';
 import SkillRadar from '../components/Analytics/SkillRadar';
 
 export default function Settings() {
-  const { isLoggedIn, user } = useUser();
+  const { isLoggedIn } = useUser();
   const [profile, setProfile] = useState<FullProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [bio, setBio] = useState('');

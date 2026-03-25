@@ -63,6 +63,9 @@ const sampleModule: Module = {
   pathId: 'docker',
   title: 'Containers & Docker Fundamentals',
   conceptExplanation: 'Docker is a platform for building and running containers.',
+  flashcards: [],
+  analogies: [],
+  keyTerms: [],
   exercises: [
     {
       id: 'ex-01',
@@ -292,6 +295,9 @@ const fourExerciseModule: Module = {
   pathId: 'docker',
   title: 'Advanced Docker',
   conceptExplanation: 'Advanced Docker concepts.',
+  flashcards: [],
+  analogies: [],
+  keyTerms: [],
   exercises: [
     { id: 'ex-a', type: 'true_false', question: 'Q1', correctAnswer: 'true', difficulty: 'beginner' },
     { id: 'ex-b', type: 'true_false', question: 'Q2', correctAnswer: 'true', difficulty: 'beginner' },

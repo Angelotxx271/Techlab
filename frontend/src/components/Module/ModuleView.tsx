@@ -80,6 +80,8 @@ export default function ModuleView({ pathId, moduleId }: ModuleViewProps) {
       setAdaptiveState({
         consecutiveCorrect: cached.consecutiveCorrect,
         consecutiveIncorrect: cached.consecutiveIncorrect,
+        totalCorrect: cached.correctCount,
+        totalAnswered: cached.exerciseIndex,
       });
       setTimeout(() => window.scrollTo(0, cached.scrollY), 100);
     } else {

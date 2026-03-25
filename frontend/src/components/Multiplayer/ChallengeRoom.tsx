@@ -24,7 +24,7 @@ export default function ChallengeRoom() {
   const [timer, setTimer] = useState(300);
   const [answer, setAnswer] = useState('');
   const wsRef = useRef<WebSocket | null>(null);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
   useEffect(() => {
     if (phase === 'lobby') {
